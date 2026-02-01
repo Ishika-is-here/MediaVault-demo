@@ -7,9 +7,11 @@ body{
 background-image: url('background.webp');
 }
 .navbar{
+    position: sticky;
+    top: 0;
     display: flex;
     align-items: center;
-    padding: 20px;
+    padding: 0;
 }
 nav{
     flex:1;
@@ -24,6 +26,7 @@ nav ul li{
     margin-right: 20px;
 }
 a{
+    font-size: 20px;
     text-decoration: none;
     color: #ffffff;
 }
@@ -32,3 +35,71 @@ a{
     margin: auto;
     padding-right: 200px;
 }
+p {
+  color: #3be8bf;  
+}
+.row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.col-2{
+    padding-left: 20px;
+    padding-bottom: 100px;
+    flex-basis: 50%;
+    min-width: 300px;
+}
+.col-2 img{
+    max-width: 90%;
+    margin-top: -40px;
+    padding-top: 30px;
+    padding-left: 0;
+    padding-right: 0;
+}
+.col-2 h1{
+    color: #3be8bf;
+    margin-top: -120px;
+}
+.search-box {
+    position: relative;
+    display: inline-block;
+}
+.search-box .search {
+    width: 180px;
+    padding: 12px 8px; 
+    border-radius: 20px; 
+    border: 1px solid #ccc; 
+    outline: none;
+}
+.search-box i {
+    color: #000000;
+    position: absolute; 
+    right: 4px;        
+    top: 14%;
+    background-color: #3be8bf;
+    padding: 8px;
+    border-radius: 50px;
+    pointer-events: none;       
+}
+.btn {
+    position: relative;
+    display: inline-block;
+    background: #ee8104;
+    color: #000000;
+    margin: 0;
+    padding: 5px 15px;
+    border-radius: 5px;
+    border-color: #ffffff;
+}
+.btn2 {
+    display: inline-block;
+    background: #f2d70b;
+    color: #000000;
+    margin: 0;
+    padding: 5px 15px;
+    border-radius: 20px;
+    border-color: #f2d70b;
+}
+    
+    
