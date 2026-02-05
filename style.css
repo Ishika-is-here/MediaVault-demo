@@ -4,33 +4,34 @@ box-sizing: border-box;
 }
 
 body{
-background-image: url('background.webp');
+background-image: url('images/background.webp');
 }
-.navbar{
-    position: sticky;
+.navbar {
+    position: 0;
+    z-index: 999;
     top: 0;
     display: flex;
     align-items: center;
     padding: 0;
 }
-nav{
+nav {
     flex:1;
     text-align: right;
 }
-nav ul{
+nav ul {
     display: inline-block;
     list-style-type: none;
 }
-nav ul li{
+nav ul li {
     display: inline-block;
     margin-right: 20px;
 }
-a{
+a {
     font-size: 20px;
     text-decoration: none;
     color: #ffffff;
 }
-.container{
+.container {
     max-width: 1300px;
     margin: auto;
     padding-right: 200px;
@@ -44,27 +45,29 @@ p {
   font-style: normal;
 }
 
-.row{
+.row {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-around;
 }
-.col-2{
+.col-2 {
     padding-top: 50px;
     padding-left: 20px;
     padding-bottom: 0px;
     flex-basis: 50%;
     min-width: 300px;
 }
-.col-2 img{
-    max-width: 90%;
-    margin-top: -40px;
-    padding-top: 0;
-    padding-left: 0;
+.col-2 img {
+    max-width: 100%;
+    margin-bottom: -50px;
     padding-right: 0;
+    /* Add these: */
+    position: relative;
+    top: -80px;
+    right: -50px;
 }
-.col-2 h1{
+.col-2 h1 {
     color: #3be8bf;
     margin-top: -120px;
 }
@@ -88,13 +91,18 @@ p {
 .search-box i {
     color: #000000;
     position: absolute; 
-    right: 4px;        
-    top: 14%;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
     background-color: #3be8bf;
-    padding: 8px;
-    border-radius: 50px;
-    pointer-events: none;       
-}
+    width: 30px; 
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;        
+}      
 .btn {
     position: relative;
     display: inline-block;
@@ -114,5 +122,158 @@ p {
     border-radius: 20px;
     border-color: #f2d70b;
 }
-    
-    
+.header .row{
+    margin-top: 70px;
+}
+.btn2:hover {
+background: #f4ebaa;
+}
+
+.faded-line {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 80%;       /* Controls the overall length */
+  margin: 20px auto; /* Centers the component */
+}
+
+.faded-line::before,
+.faded-line::after {
+  content: "";
+  flex: 1;
+  height: 3px;
+}
+
+/* This creates the fade effect */
+.faded-line::before {
+  background: linear-gradient(to left, #0ad8d1, transparent);
+  margin-right: 15px;
+}
+
+.faded-line::after {
+  background: linear-gradient(to right, #0ad8d1, transparent);
+  margin-left: 15px;
+}
+
+.line-text {
+  font-size: x-large;  
+  font-weight: bold;
+  color: #ffffff;
+}
+.card-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  position: relative; /* This is the "anchor" for the overlay */
+  width: 300px;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image fills the box without stretching */
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  /* Centering the text/button inside the overlay */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  /* Darkens the image so text is readable */
+  background: rgba(0, 0, 0, 0.4); 
+  color: white;
+  text-align: center;
+
+  opacity: 0;               /* Hidden by default */
+  transition: opacity 0.4s;
+}
+.card:hover .overlay {
+  opacity: 1;               /* Becomes visible */
+}
+.btn3 {
+  margin-top: 15px;
+  padding: 10px 25px;
+  background: #fff;
+  color: #000;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.grid-container {
+  display: flex;
+  gap: 20px;
+  padding: 50px;
+}
+.glass-box {
+  width: 200px; 
+  height: 200px;
+  margin: 0 auto; 
+  padding: 10px; 
+  
+  /* 3. Keep the transparency */
+  background: rgba(255, 255, 255, 0.2); 
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  text-align: center;
+}
+.glass-box img {
+  width: 100%; /* Adjust based on your image size */
+  height: auto;
+  padding-top: 30px; 
+}
+.glass-box p {
+  color: white;
+  font-weight: bold;
+}
+hr {
+  border: 0;                /* Remove the default grey line */
+  height: 2px;              /* Control the thickness here */
+  background-image: linear-gradient(to right, transparent, #ccc, transparent);
+}
+footer {
+  color: white;
+  padding: 20px 0;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto; /* Centers the content box */
+  display: flex;
+  justify-content: space-between; /* Pushes content to the left and right */
+  align-items: center; /* Vertically centers the items */
+  padding: 0 20px;
+}
+
+.footer-left a, .footer-right a {
+  color: white;
+  text-decoration: none;
+  margin-right: 20px; /* Spacing between links */
+  font-size: 14px;
+  transition: opacity 0.3s;
+}
+
+.footer-right a:last-child, .footer-left a:last-child {
+  margin-right: 0;
+}
+
+.footer-left a:hover, .footer-right a:hover {
+  opacity: 0.7; 
+}
