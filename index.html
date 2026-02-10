@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     
-    <title>homepage</title>
+    <title>Media Vault</title>
     <link rel="stylesheet" href="style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,7 +31,7 @@
                         <li><div class="search-box">
                         <input type="search" class="search" placeholder="Search here...">
                         <i class="fa-solid fa-magnifying-glass"></i></div></li>
-                        <li><a href="" class="btn">Login</a></li>
+                        <li><a href="#" class="btn">Login</a></li>
                     </ul>
                 </nav>
             </div>
@@ -56,7 +56,7 @@
 
     <div class="card-container">
         <div class="card">
-            <img src="images/games.png">
+            <img src="images/game2.jpeg">
             <div class="overlay">
             <h2>Games</h2>
             <p>Video Games for All Consoles & PC</p>
@@ -65,7 +65,7 @@
         </div>
 
         <div class="card">
-            <img src="images/movies.png">
+            <img src="images/movie2.jpeg">
             <div class="overlay">
             <h2>Movies</h2>
             <p>New Releases & Classic Hits</p>
@@ -74,7 +74,7 @@
         </div>
 
         <div class="card">
-            <img src="images/books.png">
+            <img src="images/book2.jpeg">
             <div class="overlay">
             <h2>Books</h2>
             <p>Best Sellers & Popular Reads</p>
@@ -124,6 +124,72 @@
   </div>
 </footer>
 <br><br><hr>
+
+<div class="login-section">
+    <div class="wrapper">
+        <span class="icon-close"><i class="fa-solid fa-xmark"></i></span>
+        <div class="form-box login">
+            <h2>Login</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-envelope "></i></span>
+                    <input type="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-lock"></i></span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox">Remember me</label>
+                    <a href="#">Forgot password?</a>
+                </div>
+                <button type="submit" class="btnlgn">Login</button>
+                <div class="login-register">
+                    <p>Don't have an account?
+                    <a href="#" class="register-link">Register</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+
+        <div class="form-box register">
+            <h2>Register</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-user"></i></span>
+                    <input type="text" required>
+                    <label>Username</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-envelope "></i></span>
+                    <input type="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-lock"></i></span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox">agree to the terms & conditions</label>
+                </div>
+                <button type="submit" class="btnlgn">Register</button>
+                <div class="login-register">
+                    <p>Already have an account?
+                    <a href="#" class="login-link">Login</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
 <script src="script.js"></script>
+
+
 </body>
 </html>
