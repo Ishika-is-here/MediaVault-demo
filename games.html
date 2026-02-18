@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediaVault</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+</head>
+
+<body>
+<div class="header">
+  <div class="container">
+    <div class="navbar">
+      <a href="#">
+      <img src="images/logo.png" width="150">
+      </a>
+      <nav>
+          <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="#">Games</a></li>
+              <li><a href="">Movies</a></li>
+              <li><a href="">Books</a></li>
+              <li><a href="">About</a></li>
+              <li><div class="search-box">
+              <input type="search" class="search" placeholder="Search here...">
+              <i class="fa-solid fa-magnifying-glass"></i></div></li>
+              <li><a href="#" class="icon-cart"><i class="fa-solid fa-cart-shopping"></i><span id="cart-count">0</span></a></li>
+          </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+<section class="shop-section">
+    <div class="hero-header">
+        <h1>ULTIMATE <span class="neon-text">GAME</span> STORE</h1>
+        <p>Level up your library with the latest hits</p>
+    </div>
+    <div class="glass-container">
+        <h2 class="section-title">Featured Games</h2>
+        <div class="games-grid" id="gameGrid">
+            </div>
+    </div>
+</section>
+
+<div id="libraryOverlay" class="library-overlay">
+    <div class="library-content">
+        <div class="library-header">
+            <h1><i class="fa-solid fa-layer-group"></i> My Library</h1>
+            <button id="closeLibrary" class="cross-btn">&times;</button>
+        </div>
+        
+        <div class="table-wrapper">
+            <table class="library-table">
+                <thead>
+                    <tr>
+                        <th>Game Title</th>
+                        <th>Original Price</th>
+                        <th>Discount (10%)</th>
+                        <th>Total Paid</th>
+                    </tr>
+                </thead>
+                <tbody id="libraryTableBody">
+                    </tbody>
+            </table>
+        </div>
+        
+        <div class="library-footer">
+            <h3>Total Value: <span id="libraryGrandTotal">$0.00</span></h3>
+        </div>
+    </div>
+</div>
+
+</body>
+
+<script src="script2.js"></script>
+
+</body>
+</html>

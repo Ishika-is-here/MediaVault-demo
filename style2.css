@@ -1,0 +1,238 @@
+*{margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body{
+    background-image: url('images/background2.jpg');
+}
+
+/* --- 2. BLURRED GAME GRID --- */
+.shop-section {
+    display: flex;
+    flex-direction: column; /* Stacks Title on top of Grid */
+    align-items: center;
+    padding-top: 60px;
+    min-height: 100vh;
+}
+
+.hero-header {
+    text-align: center;
+    margin-bottom: 40px;
+    animation: fadeInDown 1s ease-out;
+}
+
+.hero-header h1 {
+    font-size: 3.5rem;
+    margin: 0;
+    letter-spacing: 5px;
+    font-weight: 900;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.neon-text {
+    color: #ff4757; /* Your accent color */
+    text-shadow: 0 0 10px #ff4757, 
+                 0 0 20px #ff4757, 
+                 0 0 40px #ff4757;
+    display: inline-block;
+    animation: pulse 2s infinite alternate;
+}
+
+.hero-header p {
+    color: #888;
+    font-size: 1.1rem;
+    margin-top: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Smooth entry animation */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    from { opacity: 1; text-shadow: 0 0 10px #ff4757, 0 0 20px #ff4757; }
+    to { opacity: 0.8; text-shadow: 0 0 5px #ff4757, 0 0 10px #ff4757; }
+}
+
+.glass-container {
+    width: 1100px; /* Aligned with carousel */
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.section-title {
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 1.5rem;
+    border-left: 4px solid #ff4757;
+    color: aliceblue;
+    padding-left: 15px;
+}
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Exactly 4 columns */
+    gap: 20px;
+}
+
+.product-card {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    border-color: #47d7ff;
+}
+
+.product-card img {
+    width: 100%;
+    height: 300px; 
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 12px;
+    text-align: center;
+}
+
+.product-info h3 {
+    font-size: 0.9rem;
+    margin: 0 0 5px 0;
+}
+
+.price {
+    color: #0ce225;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.product-info h3 {
+    color: #ffffff; /* White text */
+    text-shadow: 0 0 8px rgba(71, 203, 255, 0.8); 
+    font-weight: bold;
+}
+
+.buy-btn {
+    background: #47d7ff;
+    color: black;
+    border: none;
+    width: 100%;
+    padding: 8px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.icon-cart {
+    position: relative; /* Needed to anchor the badge */
+    display: inline-block;
+}
+
+#cart-count {
+    position: absolute;
+    top: -8px;      /* Pulls it up */
+    right: -10px;   /* Pulls it right */
+    background-color: #ff4757; /* Your accent red */
+    color: white;
+    font-size: 0.7rem;
+    font-weight: bold;
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #121212; /* Matches navbar bg to make it pop */
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Optional: Animation when number changes */
+.bump {
+    transform: scale(1.4);
+}
+
+/* Ensure the overlay is actually on top of everything */
+.library-overlay {
+    display: none; /* JS will change this to flex */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 10000; /* Extremely high to be above the navbar */
+}
+
+.library-content {
+    width: 80%;
+    max-width: 1000px;
+    background: #1a1a1a;
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid #333;
+    box-shadow: 0 0 50px rgba(0,0,0,0.5);
+}
+
+.library-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.cross-btn {
+    background: none;
+    border: none;
+    color: #ff4757;
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+.cross-btn:hover {
+    color: white;
+    transform: rotate(90deg);
+}
+
+.library-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #eee;
+}
+
+.library-table th {
+    background: #252525;
+    padding: 15px;
+    text-align: left;
+    border-bottom: 2px solid #ff4757;
+}
+
+.library-table td {
+    padding: 15px;
+    border-bottom: 1px solid #333;
+}
+
+.library-footer {
+    margin-top: 30px;
+    text-align: right;
+    font-size: 1.5rem;
+    color: #ff4757;
+}
