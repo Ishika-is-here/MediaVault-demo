@@ -58,8 +58,6 @@ function renderGrid(data) {
 
     // Determine button text
     let btnText = "Add to Cart";
-    if (isBookPage) btnText = "Add to Cart";
-    if (isMoviePage) btnText = "Add to Cart";
 
     grid.innerHTML = displayList.map(item => `
         <div class="product-card">
@@ -80,7 +78,8 @@ function addToCart(id) {
     const item = [...gamesList, ...booksList, ...moviesList].find(i => i.id === id);
     
     if (item) {
-        const originalPrice = parseFloat(item.price.replace('$', '')) || 0;
+        // We strip the ₹ to do math
+        const originalPrice = parseFloat(item.price.replace('₹', '')) || 0;
         const discount = originalPrice * 0.10;
         const finalPrice = originalPrice - discount;
 
@@ -116,9 +115,9 @@ function renderLibraryTable() {
     tableBody.innerHTML = myLibrary.map(item => `
         <tr>
             <td><strong>${item.title}</strong></td>
-            <td>$${item.price.toFixed(2)}</td>
-            <td style="color: #ff4757;">-$${item.discount.toFixed(2)}</td>
-            <td>$${item.total.toFixed(2)}</td>
+            <td>₹${item.price.toFixed(2)}</td>
+            <td style="color: #ff4757;">-₹${item.discount.toFixed(2)}</td>
+            <td>₹${item.total.toFixed(2)}</td>
             <td>
                 <button class="remove-btn" onclick="removeFromLibrary(${item.uniqueId})">
                     <i class="fa-solid fa-trash"></i>
@@ -128,7 +127,9 @@ function renderLibraryTable() {
     `).join('');
 
     const totalVal = myLibrary.reduce((sum, item) => sum + item.total, 0);
-    grandTotalSpan.innerText = `$${totalVal.toFixed(2)}`;
+    if (grandTotalSpan) {
+        grandTotalSpan.innerText = `₹${totalVal.toFixed(2)}`;
+    }
 }
 
 function updateCartBadge() {
@@ -167,13 +168,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const overlay = document.getElementById('libraryOverlay');
     const closeBtn = document.getElementById('closeLibrary');
 
-    if (cartBtn) {
+    if (cartBtn && overlay) {
         cartBtn.addEventListener('click', (e) => {
             e.preventDefault();
             overlay.style.display = 'flex';
         });
     }
-    if (closeBtn) {
+    if (closeBtn && overlay) {
         closeBtn.addEventListener('click', () => {
             overlay.style.display = 'none';
         });
