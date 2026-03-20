@@ -24,14 +24,55 @@ const booksList = [
 ];
 
 const moviesList = [
-    { id: 1001, title: "Fight Club", price: "₹59", img: "images/movieimg/m1.jpeg" }, 
-    { id: 1002, title: "Interstellar", price: "₹59", img: "images/movieimg/m2.jpeg" },
-    { id: 1003, title: "Jumanji Next Level", price: "₹59", img: "images/movieimg/m3.jpeg" }, 
-    { id: 1004, title: "Spiderman", price: "₹59", img: "images/movieimg/m4.jpeg" },
-    { id: 1005, title: "IT", price: "₹59", img: "images/movieimg/m5.jpeg" },
-    { id: 1006, title: "Batman", price: "₹59", img: "images/movieimg/m6.jpeg" },
-    { id: 1007, title: "Pirates of the Caribbean", price: "₹59", img: "images/movieimg/m7.jpeg" }, 
-    { id: 1008, title: "The Truman Show", price: "₹59", img: "images/movieimg/m8.jpeg" }
+    { id: 1001, title: "Fight Club", price: "₹59", img: "images/movieimg/m1.jpeg", videoFile: "trailers/fc.mp4",
+        description: `Unhappy with his capitalistic lifestyle, a white-collared insomniac forms an underground fight club with Tyler, a careless soap salesman. Soon, their venture spirals down into something sinister.<br>
+        <b>Cast:</b> Brad Pitt, Edward Norton, Helena Bonham Carter, Meat Loaf, Jared Leto.<br>
+        <b>Director:</b> David Fincher.<br>
+        <b>Genre:</b> Drama, Thriller.<br>
+        <b>Release Year:</b> 1999.`}, 
+    { id: 1002, title: "Interstellar", price: "₹59", img: "images/movieimg/m2.jpeg", videoFile: "trailers/interstellar.mp4", 
+        description: `When Earth becomes uninhabitable in the future, a farmer and ex-NASA pilot, Joseph Cooper, is tasked to pilot a spacecraft, along with a team of researchers, to find a new planet for humans.<br>
+        <b>Cast:</b> Matthew McConaughey, Anne Hathaway, Jessica Chastain, Bill Irwin, Ellen Burstyn.<br>
+        <b>Director:</b> Christopher Nolan.<br>
+        <b>Genre:</b> Adventure, Drama, Sci-Fi.<br>
+        <b>Release Year:</b> 2014.`},
+    { id: 1003, title: "Jumanji Next Level", price: "₹59", img: "images/movieimg/m3.jpeg", videoFile: "trailers/jumanji.mp4",
+        description: `When Spencer goes missing, his group of friends return to Jumanji to travel unexplored territories and help him escape the world's most dangerous game.
+        <b>Cast:</b> Dwayne Johnson, Jack Black, Kevin Hart, Karen Gillan, Awkwafina.<br>
+        <b>Director:</b> Jake Kasdan.<br>
+        <b>Genre:</b> Action, Adventure, Comedy.<br>
+        <b>Release Year:</b> 2019.`,
+        }, 
+    { id: 1004, title: "Spiderman", price: "₹59", img: "images/movieimg/m4.jpeg", videoFile: "trailers/spider.mp4",
+        description: `Spider-Man seeks the help of Doctor Strange to forget his exposed secret identity as Peter Parker. However, Strange's spell goes horribly wrong, leading to unwanted guests entering their universe.<br>
+        <b>Cast:</b> Tom Holland, Zendaya, Mahershala Ali, Jon Favreau.<br>
+        <b>Director:</b> Jon Watts.<br>
+        <b>Genre:</b> Action, Adventure, Comedy.<br>
+        <b>Release Year:</b> 2021.` },
+    { id: 1005, title: "IT", price: "₹59", img: "images/movieimg/m5.jpeg", videoFile: "trailers/it.mp4",
+        description: `Seven helpless and bullied children are forced to face their worst nightmares when Pennywise, a shape-shifting clown, reappears. The clown, an ancient evil torments children before feeding on them.<br>
+        <b>Cast:</b> Bill Skarsgård, Jaeden Martell, Finn Wolfhard, Jeremy Ray Taylor.<br>
+        <b>Director:</b> Andy Muschietti.<br>
+        <b>Genre:</b> Horror, Thriller.<br>
+        <b>Release Year:</b> 2017.` },
+    { id: 1006, title: "The Batman", price: "₹59", img: "images/movieimg/m6.jpeg", videoFile: "trailers/batman.mp4",
+        description: `Batman is called to intervene when the mayor of Gotham City is murdered. Soon, his investigation leads him to uncover a web of corruption, linked to his own dark past.<br>
+        <b>Cast:</b> Christian Bale, Heath Ledger, Aaron Eckhart, Michael Caine.<br>
+        <b>Director:</b> Matt Reeves.<br>
+        <b>Genre:</b> Action, Crime, Drama.<br>
+        <b>Release Year:</b> 2022.` },
+    { id: 1007, title: "Pirates of the Caribbean", price: "₹59", img: "images/movieimg/m7.jpeg", videoFile: "trailers/pocs.mp4",
+        description: `To break the curse of Flying Dutchman, Captain Jack Sparrow and Henry Turner embark on a mission to find the Trident of Poseidon. They also try to stop Captain Salazar who intends to rule the seas.<br>
+        <b>Cast:</b> Johnny Depp, Geoffrey Rush, Orlando Bloom, Keira Knightley.<br>
+        <b>Director:</b> Joachim Rønning, Espen Sandberg.<br>
+        <b>Genre:</b> Action, Adventure, Comedy.<br>
+        <b>Release Year:</b> 2017.` }, 
+    { id: 1008, title: "The Truman Show", price: "₹59", img: "images/movieimg/m8.jpeg", videoFile: "trailers/truman.mp4",
+        description: `Executive producer Christof organises a reality show based on the life of an ordinary man, Truman Burbank. But Truman is unaware of the fact that every move of his life is being captured by cameras.<br>
+        <b>Cast:</b> Jim Carrey, Laura Linney, Noah Emmerich, Natascha McElhone.<br>
+        <b>Director:</b> Peter Weir.<br>
+        <b>Genre:</b> Drama.<br>
+        <b>Release Year:</b> 1998.` }
 ];
 
 // Load library from browser memory (localStorage)
@@ -48,7 +89,6 @@ function renderGrid(data) {
     const isBookPage = document.body.classList.contains('book-page');
     const isMoviePage = document.body.classList.contains('movie-page');
 
-    // Determine which list to use as default
     let displayList = data;
     if (!displayList) {
         if (isBookPage) displayList = booksList;
@@ -56,22 +96,79 @@ function renderGrid(data) {
         else displayList = gamesList;
     }
 
-    // Determine button text
     let btnText = "Add to Cart";
 
-    grid.innerHTML = displayList.map(item => `
-        <div class="product-card">
-            <img src="${item.img}" alt="${item.title}">
-            <div class="product-info">
-                <h3>${item.title}</h3>
-                <span class="price">${item.price}</span>
-                <button class="buy-btn" onclick="addToCart(${item.id})">
-                    ${btnText}
-                </button>
+    grid.innerHTML = displayList.map(item => {
+        // --- ADD THIS PART ---
+        // If we are on the movies page, make the image clickable
+        let imageClickAction = "";
+        if (isMoviePage) {
+            imageClickAction = `onclick="openPreview(${item.id})" style="cursor:pointer"`;
+        }
+        // ---------------------
+
+        return `
+            <div class="product-card">
+                <img src="${item.img}" alt="${item.title}" ${imageClickAction}>
+                
+                <div class="product-info">
+                    <h3>${item.title}</h3>
+                    <span class="price">${item.price}</span>
+                    <button class="buy-btn" onclick="addToCart(${item.id})">
+                        ${btnText}
+                    </button>
+                </div>
             </div>
-        </div>
-    `).join('');
+        `;
+    }).join('');
 }
+
+function openPreview(movieId) {
+    const movie = moviesList.find(m => m.id === movieId);
+    if (!movie) return;
+
+    // 1. Update the text
+    document.getElementById('preview-title').innerHTML = movie.title;
+    document.getElementById('preview-desc').innerHTML = movie.description;
+
+    // 2. Load the video
+    const videoPlayer = document.getElementById('preview-video');
+    const videoSource = document.getElementById('video-source');
+    
+    if (movie.videoFile) {
+        videoSource.src = movie.videoFile;
+        videoPlayer.load();
+    }
+
+    // 3. Open the modal
+    document.getElementById('movie-preview-modal').style.display = "block";
+}
+
+// Update your close function to STOP the video
+function closePreview() {
+    const modal = document.getElementById('movie-preview-modal');
+    const videoPlayer = document.getElementById('preview-video');
+
+    if (modal) modal.style.display = "none";
+    
+    if (videoPlayer) {
+        videoPlayer.pause(); // Stops the video
+        videoPlayer.currentTime = 0; // Resets it to the start
+    }
+}
+
+// This "listens" for clicks anywhere on the page
+document.addEventListener('click', function(event) {
+    // If they clicked the 'X' button
+    if (event.target.classList.contains('close-modal')) {
+        closePreview();
+    }
+    
+    // If they clicked the dark background OUTSIDE the modal
+    if (event.target.id === 'movie-preview-modal') {
+        closePreview();
+    }
+});
 
 function addToCart(id) {
     // Search ALL lists for the item
