@@ -2,14 +2,14 @@
 // 1. DATA - Games, Books, & Movies
 // ==========================================
 const gamesList = [
-    { id: 1, title: "The Last of Us", price: "₹59", img: "images/gameimg/g4.jpeg" },
-    { id: 2, title: "Red Dead Redemption II", price: "₹49", img: "images/gameimg/g5.jpeg" },
-    { id: 3, title: "Silent Hill", price: "₹39", img: "images/gameimg/g6.jpeg" },
-    { id: 4, title: "Lords of The Fallen", price: "₹15", img: "images/gameimg/g7.jpeg" },
-    { id: 5, title: "Roblox", price: "₹59", img: "images/gameimg/g8.jpeg" },
-    { id: 6, title: "Sinking City", price: "₹49", img: "images/gameimg/g9.jpeg" },
-    { id: 7, title: "Minecraft", price: "₹39", img: "images/gameimg/g10.jpeg" },
-    { id: 8, title: "Amnesia", price: "₹15", img: "images/gameimg/g11.jpeg" }
+    { id: 1, title: "The Last of Us", price: "₹59", img: "images/gameimg/g4.jpeg", category: "Adventure" },
+    { id: 2, title: "Red Dead Redemption II", price: "₹49", img: "images/gameimg/g5.jpeg", category: "Adventure" },
+    { id: 3, title: "Silent Hill", price: "₹39", img: "images/gameimg/g6.jpeg", category: "Adventure" },
+    { id: 4, title: "Lords of The Fallen", price: "₹15", img: "images/gameimg/g7.jpeg", category: "Action" },
+    { id: 5, title: "Roblox", price: "₹59", img: "images/gameimg/g8.jpeg", category: "Simulation" },
+    { id: 6, title: "Sinking City", price: "₹49", img: "images/gameimg/g9.jpeg", category: "Action" },
+    { id: 7, title: "Minecraft", price: "₹39", img: "images/gameimg/g10.jpeg", category: "Simulation" },
+    { id: 8, title: "Amnesia", price: "₹15", img: "images/gameimg/g11.jpeg", category: "Horror" }
 ];
 
 const booksList = [
@@ -96,16 +96,27 @@ function renderGrid(data) {
         else displayList = gamesList;
     }
 
+    // --- NEW: CATEGORY FILTERING ---
+    // Get the hash (e.g., "#horror") and remove the "#" to get "horror"
+    const currentHash = window.location.hash.substring(1).toLowerCase();
+
+    // If there is a hash in the URL, filter the list to only show that genre
+    if (currentHash) {
+        displayList = displayList.filter(item => {
+            // This assumes your objects have a 'category' or 'genre' property
+            return item.category && item.category.toLowerCase() === currentHash;
+        });
+    }
+    // -------------------------------
+
     let btnText = "Add to Cart";
 
     grid.innerHTML = displayList.map(item => {
-        // --- ADD THIS PART ---
         // If we are on the movies page, make the image clickable
         let imageClickAction = "";
         if (isMoviePage) {
             imageClickAction = `onclick="openPreview(${item.id})" style="cursor:pointer"`;
         }
-        // ---------------------
 
         return `
             <div class="product-card">
@@ -122,6 +133,7 @@ function renderGrid(data) {
         `;
     }).join('');
 }
+window.addEventListener('hashchange', () => renderGrid());
 
 function openPreview(movieId) {
     const movie = moviesList.find(m => m.id === movieId);
