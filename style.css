@@ -11,22 +11,24 @@ body{
 background-image: url('images/background.webp');
 }
 
+/* --- 1. GLOBAL NAVBAR STRUCTURE --- */
 .navbar {   
-  z-index: 999;
-  top: 0;
-  display: flex;
-  align-items: center;
-  padding: 0;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    padding: 0;
 }
 
 nav {
-    flex:1;
+    flex: 1;
     text-align: right;
 }
 
 nav ul {
     display: inline-block;
-    list-style-type: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 nav ul li {
@@ -35,110 +37,103 @@ nav ul li {
     margin-right: 20px;
 }
 
-/* 1. Reset the parent LI for the dropdown anchor */
-.navbar ul li.dropdown {  
-    position: relative;
-    display: inline-block;
-}
-
-/* 2. Style the dropdown menu container */
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    
-    /* FIX: Set a consistent fixed width for all dropdowns */
-    width: 150px; 
-    
-    background-color: #474b52;
-    padding: 8px0 !important; 
-    margin: 0;
-    list-style: none;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
-    z-index: 100;
-    text-align: left !important;
-    border-radius: 10px;        /* Softens the corners of the box */
-    overflow: hidden;           /* Ensures hover background doesn't "leak" out of corners */
-    box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
-}
-
-/* 3. Ensure the list items stack vertically and fill the 160px */
-.dropdown-menu li {
-    display: block !important;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-/* 4. Style the links to fill the entire 160px width */
-.dropdown-menu li a {
-    display: block !important; 
-    width: 100%;               /* This ensures the hover background fills the 160px */
-    padding: 10px 20px;        /* 20px side padding keeps "Adventure" safe */
-    color: #ffffff;
-    text-decoration: none !important;
-    white-space: nowrap;       /* Keeps text on one line */
-    box-sizing: border-box;    /* Crucial: keeps padding inside the 160px width */
-    transition: 0.3s;
-    border: none !important;
-}
-
-.dropdown-menu li a:hover {
-    background-color: #f1f1f1;
-    color: #ff523b;
-    border: none !important;
-}
-
-/* 4. Kill the red line if it's a pseudo-element (::after) */
-.dropdown-menu li a::after, 
-.dropdown-menu li::after {
-    display: none !important;
-    content: none !important;
-    width: 0 !important;
-}
-
-/* 6. The trigger to show the menu */
-.dropdown:hover .dropdown-menu {
-    display: block;
-}
-
+/* --- 2. UNIFIED LINK STYLING (No Duplicates) --- */
 nav ul li a {
     font-size: 20px;
-    text-decoration: none;
     color: #ffffff;
-    display: inline-block;
+    text-decoration: none;
+    display: flex; /* Flex handles text + arrow alignment perfectly */
+    align-items: center;
+    justify-content: flex-start;
+    gap: 4px;
+    padding: 10px 0;
     position: relative;
-    padding-bottom: 5px;
+    transition: 0.3s;
 }
 
+/* Red underline effect using ::after (Zero-jump method) */
 nav ul li a::after {
     content: '';
     position: absolute;
     width: 0;             
     height: 3px;          
-    bottom: 0;            
+    bottom: 2px;            
     left: 0;
-    background-color: #ff523b;
+    background-color: #e67e22;
     transition: width 0.3s ease; 
 }
 
-/* The Hover State */
-nav ul li a:hover::after {
-    width: 100%;          
+nav ul li a:hover::after, 
+nav ul li a.active::after {
+    width: 100%; /* Shows line on hover and on active page */
 }
 
-/* "Login" button shouldn't have the line */
-nav ul li a.btn::after {
-    display: none;
-}
-
-/* Styling for the current page link */
 nav ul li a.active {
-    color: #e67e22 !important; /* Your signature orange */
-    font-weight: bold;
-    border-bottom: 2px solid #e67e22; /* Adds a nice underline */
-    padding-bottom: 5px;
+    color: #e67e22;
+}
+
+/* --- 3. THE DROPDOWN ENGINE --- */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 150px; 
+    background-color: #474b52;
+    padding: 8px 0;
+    margin: 0;
+    list-style: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
+    z-index: 100;
+    text-align: left;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* --- 4. DROPDOWN INTERNAL LINKS (Overrides) --- */
+.dropdown-menu li {
+    display: block;
+    width: 100%;
+    margin: 0;
+}
+
+.dropdown-menu li a {
+    font-size: 15px;
+    padding: 10px 20px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Kill the red underline for items INSIDE the dropdown */
+.dropdown-menu li a::after {
+    display: none !important;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #626b68;
+    color: #11e4b3;
+}
+
+/* --- 5. THE ARROW --- */
+.arrow {
+    font-size: 25px;
+    transition: transform 0.3s;
+    line-height: 0;
+}
+
+.dropdown:hover .arrow {
+    transform: rotate(90deg);
+    color: #e67e22;
+}
+
+/* --- 6. BUTTON EXCEPTIONS --- */
+nav ul li a.btn::after {
+    content: none; /* Efficiently kills the underline for buttons */
 }
 
 .container {
