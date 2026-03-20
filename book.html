@@ -17,21 +17,45 @@
         <img src="images/logo.png" width="150">
       </a>
       <nav>
-          <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="games.html">Games</a></li>
-              <li><a href="movie.html">Movies</a></li>
-              <li><a href="book.html" class="active">Books</a></li>
-              <li><a href="about.html">About & Contact</a></li>
-              <li><div class="search-box">
-                  <input type="search" class="search" placeholder="Search books...">
-                  <i class="fa-solid fa-magnifying-glass"></i></div></li>
-              <li><a href="#" class="icon-cart">
-                  <i class="fa-solid fa-cart-shopping"></i>
-                  <span id="cart-count">0</span>
-              </a></li>
-          </ul>
-      </nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>   
+            <li class="dropdown">
+                        <a href="javascript:void(0)">Games<span class="arrow">&#9656;</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="games.html#action">Action</a></li>
+                            <li><a href="games.html#simulation">Simulation</a></li>
+                            <li><a href="games.html#adventure">Adventure</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="javascript:void(0)">Movies<span class="arrow">&#9656;</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="movie.html#horror">Horror</a></li>
+                            <li><a href="movie.html#sci-fi">Sci-Fi</a></li>
+                            <li><a href="movie.html#drama">Drama</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="active">Books<span class="arrow">&#9656;</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="book.html#fiction">Fiction</a></li>
+                            <li><a href="book.html#classics">Classics</a></li>
+                            <li><a href="book.html#mystery">Mystery</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">About & Contact</a></li>
+                    <li><div class="search-box">
+                        <input type="search" class="search" placeholder="Search books...">
+                        <i class="fa-solid fa-magnifying-glass"></i></div>
+                    </li>
+                    <li><a href="#" class="icon-cart">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span id="cart-count">0</span></a>
+                    </li>
+                </ul>
+            </nav>
     </div>
   </div>
 </div>
