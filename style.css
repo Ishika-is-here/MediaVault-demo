@@ -30,8 +30,77 @@ nav ul {
 }
 
 nav ul li {
+    position: relative;
     display: inline-block;
     margin-right: 20px;
+}
+
+/* 1. Reset the parent LI for the dropdown anchor */
+.navbar ul li.dropdown {  
+    position: relative;
+    display: inline-block;
+}
+
+/* 2. Style the dropdown menu container */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    
+    /* FIX: Set a consistent fixed width for all dropdowns */
+    width: 150px; 
+    
+    background-color: #474b52;
+    padding: 8px0 !important; 
+    margin: 0;
+    list-style: none;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+    z-index: 100;
+    text-align: left !important;
+    border-radius: 10px;        /* Softens the corners of the box */
+    overflow: hidden;           /* Ensures hover background doesn't "leak" out of corners */
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
+}
+
+/* 3. Ensure the list items stack vertically and fill the 160px */
+.dropdown-menu li {
+    display: block !important;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* 4. Style the links to fill the entire 160px width */
+.dropdown-menu li a {
+    display: block !important; 
+    width: 100%;               /* This ensures the hover background fills the 160px */
+    padding: 10px 20px;        /* 20px side padding keeps "Adventure" safe */
+    color: #ffffff;
+    text-decoration: none !important;
+    white-space: nowrap;       /* Keeps text on one line */
+    box-sizing: border-box;    /* Crucial: keeps padding inside the 160px width */
+    transition: 0.3s;
+    border: none !important;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #f1f1f1;
+    color: #ff523b;
+    border: none !important;
+}
+
+/* 4. Kill the red line if it's a pseudo-element (::after) */
+.dropdown-menu li a::after, 
+.dropdown-menu li::after {
+    display: none !important;
+    content: none !important;
+    width: 0 !important;
+}
+
+/* 6. The trigger to show the menu */
+.dropdown:hover .dropdown-menu {
+    display: block;
 }
 
 nav ul li a {
@@ -289,6 +358,48 @@ background: #f4ebaa;
   backdrop-filter: blur(10px);
   border-radius: 15px;
   text-align: center;
+}
+
+.scroll-container {
+    width: 100%;
+    overflow: hidden;
+    padding: 50px 0;
+    /* This creates a nice "fade out" effect on the edges */
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.scroll-content {
+    display: flex;
+    /* Increased space between your 4 boxes */
+    gap: 100px; 
+    width: max-content;
+    /* "alternate" makes it scroll left, then right, so it never 'jumps' */
+    animation: slide 2s linear infinite alternate;
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        /* This pushes the boxes to the left until the last one is visible */
+        transform: translateX(calc(-100% + 100vw));
+    }
+}
+
+.glass-box {
+    min-width: 230px; 
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.scroll-content:hover {
+    animation-play-state: paused;
 }
 
 .glass-box img {
@@ -745,3 +856,4 @@ margin: 25px 0 10px;
     margin-top: 0;
     letter-spacing: 1px;
 }
+
