@@ -138,6 +138,19 @@ body.book-page{
     font-weight: bold;
 }
 
+.author {
+    font-size: 0.8rem;
+    color: #ccc;
+    margin: 2px 0;
+}
+
+.genre {
+    font-size: 0.7rem;
+    color: #47d7ff;
+    margin: 2px 0;
+    font-weight: bold;
+}
+
 .buy-btn {
     background: #47d7ff;
     color: black;
@@ -295,7 +308,7 @@ body.book-page{
     margin: 5% auto;
     padding: 30px;
     width: 80%;
-    max-width: 900px;
+    max-width: 1000px;
     border-radius: 15px;
     position: relative;
 }
@@ -316,10 +329,11 @@ body.book-page{
 }
 
 .preview-video { flex: 2; }
-.preview-details { flex: 1; text-align: left; }
+.preview-image { flex: 1; }
+.preview-details { flex: 2; text-align: left; }
 
-.preview-details h2 { color: #e67e22; margin-top: 0; }
-.preview-details p { line-height: 1.6; color: #555; }
+.preview-details h2 { color: #e67e22; margin-top: 0; text-align: center; margin-bottom: 20px; }
+.preview-details p { line-height: 1.6; color: #555; text-align: left; }
 
 /* Responsive for mobile */
 @media (max-width: 768px) {
