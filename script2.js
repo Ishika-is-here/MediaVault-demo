@@ -13,14 +13,41 @@ const gamesList = [
 ];
 
 const booksList = [
-    { id: 101, title: "Wuthering Heights", price: "₹59", img: "images/bookimg/1.jpg" }, 
-    { id: 102, title: "Sherlock Holmes", price: "₹59", img: "images/bookimg/2.jpg" },
-    { id: 103, title: "Anna Karenina", price: "₹59", img: "images/bookimg/3.jpg" }, 
-    { id: 104, title: "House of Sky and Breath", price: "₹59", img: "images/bookimg/4.jpg" },
-    { id: 105, title: "The Secret History", price: "₹59", img: "images/bookimg/5.jpg" },
-    { id: 106, title: "1984", price: "₹59", img: "images/bookimg/6.jpg" },
-    { id: 107, title: "Caraval", price: "₹59", img: "images/bookimg/7.jpg" }, 
-    { id: 108, title: "Two Twisted Crowns", price: "₹59", img: "images/bookimg/8.jpg" }
+    { id: 101, title: "Wuthering Heights", author: "Emily Brontë", genre: "Classics", price: "₹59", img: "images/bookimg/1.jpg",
+      description: "A tragic love story between Catherine and Heathcliff set on the Yorkshire moors." }, 
+
+    { id: 102, title: "Sherlock Holmes", author: "Arthur Conan Doyle", genre: "Mystery", price: "₹59", img: "images/bookimg/2.jpg",
+      description: "Follow the legendary detective Sherlock Holmes solving mysterious crimes." },
+
+    { id: 103, title: "Anna Karenina", author: "Leo Tolstoy", genre: "Classics", price: "₹59", img: "images/bookimg/3.jpg",
+      description: "A deep novel exploring love, betrayal, and Russian society." },
+
+    { id: 104, title: "House of Sky and Breath", author: "Sarah J. Maas", genre: "Fiction", price: "₹59", img: "images/bookimg/4.jpg",
+      description: "Fantasy novel full of magic, danger, and romance." },
+
+    { id: 105, title: "The Secret History", author: "Donna Tartt", genre: "Fiction", price: "₹59", img: "images/bookimg/5.jpg",
+      description: "A dark academia novel about obsession and murder." },
+
+    { id: 106, title: "1984", author: "George Orwell", genre: "Classics", price: "₹59", img: "images/bookimg/6.jpg",
+      description: "A dystopian novel about surveillance and totalitarian control." },
+
+    { id: 107, title: "Caraval", author: "Stephanie Garber", genre: "Fiction", price: "₹59", img: "images/bookimg/7.jpg",
+      description: "A magical competition where nothing is what it seems." },
+
+    { id: 108, title: "Two Twisted Crowns", author: "Rachel Gillig", genre: "Fiction", price: "₹59", img: "images/bookimg/8.jpg",
+      description: "A dark fantasy filled with cursed magic and secrets." },
+
+    { id: 109, title: "Pride and Prejudice", author: "Jane Austen", genre: "Classics", price: "₹59", img: "images/bookimg/9.jpg",
+      description: "A romantic novel of manners set in Georgian England." },
+
+    { id: 110, title: "Murder on the Orient Express", author: "Agatha Christie", genre: "Mystery", price: "₹59", img: "images/bookimg/10.jpg",
+      description: "A classic whodunit mystery featuring Hercule Poirot." },
+
+    { id: 111, title: "The Girl with the Dragon Tattoo", author: "Stieg Larsson", genre: "Mystery", price: "₹59", img: "images/bookimg/12.jpg",
+      description: "A journalist and hacker investigate a disappearance in this thriller." },
+
+    { id: 112, title: "Gone Girl", author: "Gillian Flynn", genre: "Mystery", price: "₹59", img: "images/bookimg/13.jpg",
+      description: "A psychological thriller about a missing wife and marital secrets." }
 ];
 
 const moviesList = [
@@ -104,7 +131,7 @@ function renderGrid(data) {
     if (currentHash) {
         displayList = displayList.filter(item => {
             // This assumes your objects have a 'category' or 'genre' property
-            return item.category && item.category.toLowerCase() === currentHash;
+            return (item.category || item.genre) && (item.category || item.genre).toLowerCase() === currentHash;
         });
     }
     // -------------------------------
@@ -114,9 +141,12 @@ function renderGrid(data) {
     grid.innerHTML = displayList.map(item => {
         // If we are on the movies page, make the image clickable
         let imageClickAction = "";
-        if (isMoviePage) {
-            imageClickAction = `onclick="openPreview(${item.id})" style="cursor:pointer"`;
-        }
+       if (isMoviePage) {
+    imageClickAction = `onclick="openPreview(${item.id})" style="cursor:pointer"`;
+}
+if (isBookPage) {
+    imageClickAction = `onclick="openBookPreview(${item.id})" style="cursor:pointer"`;
+}
 
         return `
             <div class="product-card">
@@ -124,6 +154,7 @@ function renderGrid(data) {
                 
                 <div class="product-info">
                     <h3>${item.title}</h3>
+                    ${isBookPage ? `<p class="author">by ${item.author}</p><p class="genre">${item.genre}</p>` : ''}
                     <span class="price">${item.price}</span>
                     <button class="buy-btn" onclick="addToCart(${item.id})">
                         ${btnText}
@@ -155,6 +186,16 @@ function openPreview(movieId) {
     // 3. Open the modal
     document.getElementById('movie-preview-modal').style.display = "block";
 }
+function openBookPreview(bookId) {
+    const book = booksList.find(b => b.id === bookId);
+    if (!book) return;
+
+    document.getElementById('preview-book-title').innerText = book.title;
+    document.getElementById('preview-book-desc').innerHTML = "Author: " + book.author + "<br><br>Genre: " + book.genre + "<br><br>" + book.description;
+    document.getElementById('preview-book-img').src = book.img;
+
+    document.getElementById('book-preview-modal').style.display = "block";
+}
 
 // Update your close function to STOP the video
 function closePreview() {
@@ -180,6 +221,17 @@ document.addEventListener('click', function(event) {
     if (event.target.id === 'movie-preview-modal') {
         closePreview();
     }
+
+     // ✅ BOOK MODAL CLOSE 
+    if (event.target.id === 'book-preview-modal') {
+        document.getElementById('book-preview-modal').style.display = "none";
+    }
+
+    if (event.target.classList.contains('close-book-modal')) {
+        document.getElementById('book-preview-modal').style.display = "none";
+    }
+
+
 });
 
 function addToCart(id) {
