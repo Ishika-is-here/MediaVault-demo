@@ -43,10 +43,10 @@ const booksList = [
     { id: 110, title: "Murder on the Orient Express", author: "Agatha Christie", genre: "Mystery", price: "₹59", img: "images/bookimg/10.jpg",
       description: "A classic whodunit mystery featuring Hercule Poirot." },
 
-    { id: 111, title: "The Girl with the Dragon Tattoo", author: "Stieg Larsson", genre: "Mystery", price: "₹59", img: "images/bookimg/12.jpg",
+    { id: 111, title: "The Girl with the Dragon Tattoo", author: "Stieg Larsson", genre: "Mystery", price: "₹59", img: "images/bookimg/11.jpg",
       description: "A journalist and hacker investigate a disappearance in this thriller." },
 
-    { id: 112, title: "Gone Girl", author: "Gillian Flynn", genre: "Mystery", price: "₹59", img: "images/bookimg/13.jpg",
+    { id: 112, title: "Gone Girl", author: "Gillian Flynn", genre: "Mystery", price: "₹59", img: "images/bookimg/12.jpg",
       description: "A psychological thriller about a missing wife and marital secrets." }
 ];
 
