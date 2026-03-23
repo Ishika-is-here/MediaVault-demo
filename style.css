@@ -51,7 +51,7 @@ nav ul li a {
     transition: 0.3s;
 }
 
-/* Red underline effect using ::after (Zero-jump method) */
+
 nav ul li a::after {
     content: '';
     position: absolute;
