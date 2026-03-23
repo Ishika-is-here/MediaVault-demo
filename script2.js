@@ -2,14 +2,41 @@
 // 1. DATA - Games, Books, & Movies
 // ==========================================
 const gamesList = [
-    { id: 1, title: "The Last of Us", price: "₹59", img: "images/gameimg/g4.jpeg", category: "Adventure" },
-    { id: 2, title: "Red Dead Redemption II", price: "₹49", img: "images/gameimg/g5.jpeg", category: "Adventure" },
-    { id: 3, title: "Silent Hill", price: "₹39", img: "images/gameimg/g6.jpeg", category: "Adventure" },
-    { id: 4, title: "Lords of The Fallen", price: "₹15", img: "images/gameimg/g7.jpeg", category: "Action" },
-    { id: 5, title: "Roblox", price: "₹59", img: "images/gameimg/g8.jpeg", category: "Simulation" },
-    { id: 6, title: "Sinking City", price: "₹49", img: "images/gameimg/g9.jpeg", category: "Action" },
-    { id: 7, title: "Minecraft", price: "₹39", img: "images/gameimg/g10.jpeg", category: "Simulation" },
-    { id: 8, title: "Amnesia", price: "₹15", img: "images/gameimg/g11.jpeg", category: "Horror" }
+    { id: 1, title: "The Last of Us", price: "₹59", img: "images/gameimg/g4.jpeg", category: "Adventure",
+        description: "In a post-apocalyptic world, Joel and Ellie must rely on each other to survive against infected creatures and hostile humans."},
+
+    { id: 2, title: "Red Dead Redemption II", price: "₹49", img: "images/gameimg/g5.jpeg", category: "Adventure",
+        description: "Arthur Morgan, an outlaw and member of the Van der Linde gang, navigates the decline of the Wild West while trying to survive against government forces and rival gangs."},
+
+    { id: 3, title: "Silent Hill", price: "₹39", img: "images/gameimg/g6.jpeg", category: "Simulation",
+        description: "In the eerie town of Silent Hill, Harry Mason searches for his missing daughter, encountering nightmarish creatures and unraveling dark secrets along the way."},
+
+    { id: 4, title: "Lords of The Fallen", price: "₹15", img: "images/gameimg/g7.jpeg", category: "Action",
+        description: "In a world where demons have invaded, Harkyn, a convicted criminal, is given a chance at redemption by battling through hordes of demonic enemies to save humanity."},
+
+    { id: 5, title: "Roblox", price: "₹59", img: "images/gameimg/g8.jpeg", category: "Simulation",
+        description: "Roblox is an online platform that allows users to create and play games created by other users, offering a wide variety of gaming experiences across different genres."},
+
+    { id: 6, title: "Sinking City", price: "₹49", img: "images/gameimg/g9.jpeg", category: "Action",   
+        description: "In the city of Oakmont, which is being flooded by supernatural forces, private investigator Charles Reed must uncover the truth behind the city's curse while battling otherworldly creatures and solving mysteries."},
+
+    { id: 7, title: "Minecraft", price: "₹39", img: "images/gameimg/g10.jpeg", category: "Simulation", 
+        description: "A sandbox game where players can build and explore block-based worlds." },
+
+    { id: 8, title: "Amnesia", price: "₹15", img: "images/gameimg/g11.jpeg", category: "Simulation", 
+        description: "A psychological horror game where players experience memory loss and confusion." },
+
+    { id: 9, title: "Grand Theft Auto V", price: "₹15", img: "images/gameimg/g12.jpeg", category: "Action", 
+        description: "An open-world action-adventure game set in the fictional city of Los Santos." },
+
+    { id: 10, title: "Need for Speed", price: "₹15", img: "images/gameimg/g13.jpeg", category: "Action", 
+        description: "A racing game focused on street racing and car customization." },
+
+    { id: 11, title: "Zelda", price: "₹15", img: "images/gameimg/g14.jpeg", category: "Adventure", 
+        description: "An action-adventure game featuring Link as he rescues Princess Zelda from the evil Ganon." },
+
+    { id: 12, title: "Uncharted 4", price: "₹15", img: "images/gameimg/g15.jpeg", category: "Adventure", 
+        description: "An action-adventure game following the adventures of treasure hunter Nathan Drake." }
 ];
 
 const booksList = [
@@ -56,58 +83,89 @@ const moviesList = [
         <b>Cast:</b> Brad Pitt, Edward Norton, Helena Bonham Carter, Meat Loaf, Jared Leto.<br>
         <b>Director:</b> David Fincher.<br>
         <b>Genre:</b> Drama, Thriller.<br>
-        <b>Release Year:</b> 1999.`}, 
+        <b>Release Year:</b> 1999.`, category: "Drama" }, 
+
     { id: 1002, title: "Interstellar", price: "₹59", img: "images/movieimg/m2.jpeg", videoFile: "trailers/interstellar.mp4", 
         description: `When Earth becomes uninhabitable in the future, a farmer and ex-NASA pilot, Joseph Cooper, is tasked to pilot a spacecraft, along with a team of researchers, to find a new planet for humans.<br>
         <b>Cast:</b> Matthew McConaughey, Anne Hathaway, Jessica Chastain, Bill Irwin, Ellen Burstyn.<br>
         <b>Director:</b> Christopher Nolan.<br>
         <b>Genre:</b> Adventure, Drama, Sci-Fi.<br>
-        <b>Release Year:</b> 2014.`},
+        <b>Release Year:</b> 2014.`, category: "Sci-Fi" },
+
     { id: 1003, title: "Jumanji Next Level", price: "₹59", img: "images/movieimg/m3.jpeg", videoFile: "trailers/jumanji.mp4",
         description: `When Spencer goes missing, his group of friends return to Jumanji to travel unexplored territories and help him escape the world's most dangerous game.
         <b>Cast:</b> Dwayne Johnson, Jack Black, Kevin Hart, Karen Gillan, Awkwafina.<br>
         <b>Director:</b> Jake Kasdan.<br>
         <b>Genre:</b> Action, Adventure, Comedy.<br>
-        <b>Release Year:</b> 2019.`,
-        }, 
+        <b>Release Year:</b> 2019.`, category: "Drama" },
+
     { id: 1004, title: "Spiderman", price: "₹59", img: "images/movieimg/m4.jpeg", videoFile: "trailers/spider.mp4",
         description: `Spider-Man seeks the help of Doctor Strange to forget his exposed secret identity as Peter Parker. However, Strange's spell goes horribly wrong, leading to unwanted guests entering their universe.<br>
         <b>Cast:</b> Tom Holland, Zendaya, Mahershala Ali, Jon Favreau.<br>
         <b>Director:</b> Jon Watts.<br>
         <b>Genre:</b> Action, Adventure, Comedy.<br>
-        <b>Release Year:</b> 2021.` },
+        <b>Release Year:</b> 2021.`, category: "Sci-Fi" },
+
     { id: 1005, title: "IT", price: "₹59", img: "images/movieimg/m5.jpeg", videoFile: "trailers/it.mp4",
         description: `Seven helpless and bullied children are forced to face their worst nightmares when Pennywise, a shape-shifting clown, reappears. The clown, an ancient evil torments children before feeding on them.<br>
         <b>Cast:</b> Bill Skarsgård, Jaeden Martell, Finn Wolfhard, Jeremy Ray Taylor.<br>
         <b>Director:</b> Andy Muschietti.<br>
         <b>Genre:</b> Horror, Thriller.<br>
-        <b>Release Year:</b> 2017.` },
+        <b>Release Year:</b> 2017.`, category: "Horror" },
+
     { id: 1006, title: "The Batman", price: "₹59", img: "images/movieimg/m6.jpeg", videoFile: "trailers/batman.mp4",
         description: `Batman is called to intervene when the mayor of Gotham City is murdered. Soon, his investigation leads him to uncover a web of corruption, linked to his own dark past.<br>
         <b>Cast:</b> Christian Bale, Heath Ledger, Aaron Eckhart, Michael Caine.<br>
         <b>Director:</b> Matt Reeves.<br>
         <b>Genre:</b> Action, Crime, Drama.<br>
-        <b>Release Year:</b> 2022.` },
+        <b>Release Year:</b> 2022.`, category: "Sci-Fi" },
+
     { id: 1007, title: "Pirates of the Caribbean", price: "₹59", img: "images/movieimg/m7.jpeg", videoFile: "trailers/pocs.mp4",
         description: `To break the curse of Flying Dutchman, Captain Jack Sparrow and Henry Turner embark on a mission to find the Trident of Poseidon. They also try to stop Captain Salazar who intends to rule the seas.<br>
         <b>Cast:</b> Johnny Depp, Geoffrey Rush, Orlando Bloom, Keira Knightley.<br>
         <b>Director:</b> Joachim Rønning, Espen Sandberg.<br>
         <b>Genre:</b> Action, Adventure, Comedy.<br>
-        <b>Release Year:</b> 2017.` }, 
+        <b>Release Year:</b> 2017.`, category: "Drama" },
+
     { id: 1008, title: "The Truman Show", price: "₹59", img: "images/movieimg/m8.jpeg", videoFile: "trailers/truman.mp4",
         description: `Executive producer Christof organises a reality show based on the life of an ordinary man, Truman Burbank. But Truman is unaware of the fact that every move of his life is being captured by cameras.<br>
         <b>Cast:</b> Jim Carrey, Laura Linney, Noah Emmerich, Natascha McElhone.<br>
         <b>Director:</b> Peter Weir.<br>
         <b>Genre:</b> Drama.<br>
-        <b>Release Year:</b> 1998.` }
+        <b>Release Year:</b> 1998.`, category: "Drama" },
+
+    { id: 1009, title: "Midsommar", price: "₹59", img: "images/movieimg/m9.jpeg", videoFile: "trailers/midsommar.mp4",
+        description: `Dani's psychological trauma affects her relationship with Christian, her lover. However, when they visit their friend's ancestral commune in an effort to mend things, it changes their lives forever.<br>
+        <b>Cast:</b> Anya Taylor-Joy, Florence Pugh, David Jonsson, Vivi-Anne Hultén.<br>
+        <b>Director:</b> Ari Aster.<br>
+        <b>Genre:</b> Horror, Thriller.<br>
+        <b>Release Year:</b> 2019.`, category: "Horror" },
+
+    { id: 1010, title: "Dune", price: "₹59", img: "images/movieimg/m10.jpeg", videoFile: "trailers/dune.mp4",
+        description: `Paul Atreides arrives on Arrakis after his father accepts the stewardship of the dangerous planet. However, chaos ensues after a betrayal as forces clash to control melange, a precious resource.<br>
+        <b>Cast:</b> Timothée Chalamet, Zendaya, Rebecca Ferguson, Oscar Isaac.<br>
+        <b>Director:</b> Denis Villeneuve.<br>
+        <b>Genre:</b> Action, Adventure, Drama.<br>
+        <b>Release Year:</b> 2021.`, category: "Sci-Fi" },
+
+    { id: 1011, title: "Black Phone 2", price: "₹59", img: "images/movieimg/m11.jpeg", videoFile: "trailers/bp2.mp4",
+        description: `As Finn, now 17, struggles with life after his captivity, his sister begins receiving calls in her dreams from the black phone and seeing disturbing visions<br>
+        <b>Cast:</b> Mason Thames, Madeleine Yuna Voyles, Evan Jonigkeit.<br>
+        <b>Director:</b> Scott Derrickson.<br>
+        <b>Genre:</b> Horror, Thriller.<br>
+        <b>Release Year:</b> 2025.`, category: "Horror" },
+
+    { id: 1012, title: "The Conjuring", price: "₹59", img: "images/movieimg/m12.jpeg", videoFile: "trailers/conjuring.mp4",
+        description: `Rod and Carolyn find their pet dog dead under mysterious circumstances and experience a spirit that harms their daughter Andrea. They finally call investigators who can help them get out of the mess.<br>
+        <b>Cast:</b> Vera Farmiga, Patrick Wilson, Ron Livingston.<br>
+        <b>Director:</b> James Wan.<br>
+        <b>Genre:</b> Horror, Thriller.<br>
+        <b>Release Year:</b> 2013.`, category: "Horror" }
 ];
 
 // Load library from browser memory (localStorage)
 let myLibrary = JSON.parse(localStorage.getItem('userLibrary')) || [];
 
-// ==========================================
-// 2. CORE FUNCTIONS
-// ==========================================
 
 function renderGrid(data) {
     const grid = document.getElementById('gameGrid');
@@ -123,81 +181,81 @@ function renderGrid(data) {
         else displayList = gamesList;
     }
 
-    // --- NEW: CATEGORY FILTERING ---
-    // Get the hash (e.g., "#horror") and remove the "#" to get "horror"
+    // --- CATEGORY/GENRE FILTERING ---
     const currentHash = window.location.hash.substring(1).toLowerCase();
-
-    // If there is a hash in the URL, filter the list to only show that genre
     if (currentHash) {
         displayList = displayList.filter(item => {
-            // This assumes your objects have a 'category' or 'genre' property
-            return (item.category || item.genre) && (item.category || item.genre).toLowerCase() === currentHash;
+            const itemType = item.category || item.genre;
+            return itemType && itemType.toLowerCase() === currentHash;
         });
     }
-    // -------------------------------
-
-    let btnText = "Add to Cart";
 
     grid.innerHTML = displayList.map(item => {
-        // If we are on the movies page, make the image clickable
-        let imageClickAction = "";
-       if (isMoviePage) {
-    imageClickAction = `onclick="openPreview(${item.id})" style="cursor:pointer"`;
-}
-if (isBookPage) {
-    imageClickAction = `onclick="openBookPreview(${item.id})" style="cursor:pointer"`;
-}
+        // Every image click now goes straight to openPreview
+        let imageClickAction = `onclick="openPreview(${item.id})" style="cursor:pointer"`;
 
         return `
             <div class="product-card">
                 <img src="${item.img}" alt="${item.title}" ${imageClickAction}>
-                
                 <div class="product-info">
                     <h3>${item.title}</h3>
-                    ${isBookPage ? `<p class="author">by ${item.author}</p><p class="genre">${item.genre}</p>` : ''}
                     <span class="price">${item.price}</span>
                     <button class="buy-btn" onclick="addToCart(${item.id})">
-                        ${btnText}
+                        Add to Cart
                     </button>
                 </div>
             </div>
         `;
     }).join('');
 }
+
+// Re-render when clicking dropdown links
 window.addEventListener('hashchange', () => renderGrid());
 
-function openPreview(movieId) {
-    const movie = moviesList.find(m => m.id === movieId);
-    if (!movie) return;
+function openPreview(itemId) {
+    // 1. Find the item in any of the three lists
+    const item = [...moviesList, ...booksList, ...gamesList].find(i => i.id === itemId);
+    if (!item) return;
 
-    // 1. Update the text
-    document.getElementById('preview-title').innerHTML = movie.title;
-    document.getElementById('preview-desc').innerHTML = movie.description;
-
-    // 2. Load the video
+    const modal = document.getElementById('movie-preview-modal');
+    const titleEl = document.getElementById('preview-title');
+    const descEl = document.getElementById('preview-desc');
     const videoPlayer = document.getElementById('preview-video');
     const videoSource = document.getElementById('video-source');
-    
-    if (movie.videoFile) {
-        videoSource.src = movie.videoFile;
+    const imageEl = document.getElementById('preview-image');
+
+    // 2. Set the Text and Reset Animations
+    titleEl.innerHTML = item.title;
+    descEl.innerHTML = item.description || "Explore this title in MediaVault.";
+    imageEl.classList.remove('game-twirl'); // Remove animation class so it can play again
+
+    // 3. Media Logic
+    if (item.videoFile) {
+        // MOVIES: Show Video
+        imageEl.style.display = "none";
+        videoPlayer.style.display = "block";
+        videoSource.src = item.videoFile;
         videoPlayer.load();
+    } else {
+        // BOOKS & GAMES: Show Image
+        videoPlayer.style.display = "none";
+        videoPlayer.pause();
+        imageEl.style.display = "block";
+        imageEl.src = item.img;
+
+        // Check if the item is from the gamesList
+        const isGame = gamesList.some(g => g.id === itemId);
+        if (isGame) {
+            // Trigger the twirl inside the modal
+            setTimeout(() => {
+                imageEl.classList.add('game-twirl');
+            }, 50);
+        }
     }
 
-    // 3. Open the modal
-    document.getElementById('movie-preview-modal').style.display = "block";
-}
-function openBookPreview(bookId) {
-    const book = booksList.find(b => b.id === bookId);
-    if (!book) return;
-
-    document.getElementById('preview-book-title').innerText = book.title;
-    document.getElementById('preview-book-desc').innerHTML = "Author: " + book.author + "<br><br>Genre: " + book.genre + "<br><br>" + book.description;
-    document.getElementById('preview-book-img').src = book.img;
-
-    document.getElementById('book-preview-modal').style.display = "block";
+    modal.style.display = "block";
 }
 
-// Update your close function to STOP the video
 function closePreview() {
     const modal = document.getElementById('movie-preview-modal');
     const videoPlayer = document.getElementById('preview-video');
@@ -205,42 +263,26 @@ function closePreview() {
     if (modal) modal.style.display = "none";
     
     if (videoPlayer) {
-        videoPlayer.pause(); // Stops the video
-        videoPlayer.currentTime = 0; // Resets it to the start
+        videoPlayer.pause();
+        videoPlayer.currentTime = 0;
     }
 }
 
-// This "listens" for clicks anywhere on the page
+// Global click listener for closing modals
 document.addEventListener('click', function(event) {
-    // If they clicked the 'X' button
-    if (event.target.classList.contains('close-modal')) {
+    if (event.target.classList.contains('close-modal') || event.target.id === 'movie-preview-modal') {
         closePreview();
     }
-    
-    // If they clicked the dark background OUTSIDE the modal
-    if (event.target.id === 'movie-preview-modal') {
-        closePreview();
-    }
-
-     // ✅ BOOK MODAL CLOSE 
-    if (event.target.id === 'book-preview-modal') {
-        document.getElementById('book-preview-modal').style.display = "none";
-    }
-
-    if (event.target.classList.contains('close-book-modal')) {
-        document.getElementById('book-preview-modal').style.display = "none";
-    }
-
-
 });
+
 
 function addToCart(id) {
     // Search ALL lists for the item
     const item = [...gamesList, ...booksList, ...moviesList].find(i => i.id === id);
     
     if (item) {
-        // We strip the ₹ to do math
-        const originalPrice = parseFloat(item.price.replace('₹', '')) || 0;
+        // Strip non-numeric characters (₹ or $) for math
+        const originalPrice = parseFloat(item.price.replace(/[^\d.]/g, '')) || 0;
         const discount = originalPrice * 0.10;
         const finalPrice = originalPrice - discount;
 
@@ -256,6 +298,8 @@ function addToCart(id) {
         alert(`${item.title} added to your library!`);
     }
 }
+
+// ... (Rest of your library functions: removeFromLibrary, saveAndRefresh, renderLibraryTable, updateCartBadge)
 
 function removeFromLibrary(uniqueId) {
     myLibrary = myLibrary.filter(item => item.uniqueId !== uniqueId);
