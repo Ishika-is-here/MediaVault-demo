@@ -6,7 +6,7 @@
     <title>MediaVault | Books</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style2.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
 </head>
 
 <body class="book-page">
@@ -116,23 +116,25 @@
   </div>
 </footer>
 <br><br><hr>
-<!-- Book Preview Modal -->
-<div id="book-preview-modal" class="modal">
+
+<div id="movie-preview-modal" class="modal">
     <div class="modal-content">
-        <span class="close-book-modal">&times;</span>
+        <span class="close-modal">&times;</span>
         <div class="preview-flex">
-            <div class="preview-image">
-                <img id="preview-book-img" src="" alt="Book Cover" width="100%">
+            <div class="preview-video">
+                <video id="preview-video" width="100%" height="auto" controls>
+                    <source id="video-source" src="" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <img id="preview-image" src="" style="display:none; width:100%; border-radius: 8px;">
             </div>
             <div class="preview-details">
-                <h2 id="preview-book-title">Book Title</h2>
-                <p id="preview-book-desc">Book description goes here...</p>
+                <h2 id="preview-title">Movie Title</h2>
+                <p id="preview-desc">Movie description goes here...</p>
             </div>
         </div>
     </div>
 </div>
-
-<script src="script2.js" defer></script>
 
 <script src="script2.js" defer></script>
 </body>
