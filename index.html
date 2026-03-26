@@ -1,3 +1,8 @@
+<?php
+session_start();
+// Check if the user is logged in
+$isLoggedIn = isset($_SESSION['user_id']) ? 'true' : 'false';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,32 +33,39 @@
                     <li class="dropdown">
                         <a href="javascript:void(0)">Games<span class="arrow">&#9656;</span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="games.html#action">Action</a></li>
-                            <li><a href="games.html#simulation">Simulation</a></li>
-                            <li><a href="games.html#adventure">Adventure</a></li>
+                            <li><a href="games.php#action">Action</a></li>
+                            <li><a href="games.php#simulation">Simulation</a></li>
+                            <li><a href="games.php#adventure">Adventure</a></li>
                         </ul>
                     </li>
 
                     <li class="dropdown">
                         <a href="javascript:void(0)">Movies<span class="arrow">&#9656;</span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="movie.html#horror">Horror</a></li>
-                            <li><a href="movie.html#sci-fi">Sci-Fi</a></li>
-                            <li><a href="movie.html#drama">Drama</a></li>
+                            <li><a href="movie.php#horror">Horror</a></li>
+                            <li><a href="movie.php#sci-fi">Sci-Fi</a></li>
+                            <li><a href="movie.php#drama">Drama</a></li>
                         </ul>
                     </li>
 
                     <li class="dropdown">
                         <a href="javascript:void(0)">Books<span class="arrow">&#9656;</span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="book.html#fiction">Fiction</a></li>
-                            <li><a href="book.html#classics">Classics</a></li>
-                            <li><a href="book.html#mystery">Mystery</a></li>
+                            <li><a href="book.php#fiction">Fiction</a></li>
+                            <li><a href="book.php#classics">Classics</a></li>
+                            <li><a href="book.php#mystery">Mystery</a></li>
                         </ul>
                     </li>
 
                     <li><a href="about.html">About & Contact</a></li>
-                    <li><a href="#" class="btn">Login</a></li>
+                    <?php 
+                    if ($isLoggedIn === 'true') { 
+                        // Uses the variable you just created at the top!
+                        echo '<li><a href="actions.php?action=logout" class="btn" onclick="return confirmLogout(event)">Logout</a></li>';
+                    } else {
+                        echo '<li><button class="btn">Login</button></li>';
+                    }
+                    ?>
                 </ul>
             </nav>
         </div>
@@ -82,7 +94,7 @@
             <div class="overlay">
             <h2>Games</h2>
             <p>Video Games for All Consoles & PC</p>
-            <a href="games.html"><button class="btn3">View Games</button></a>
+            <a href="games.php"><button class="btn3">View Games</button></a>
             </div>
         </div>
 
@@ -91,7 +103,7 @@
             <div class="overlay">
             <h2>Movies</h2>
             <p>New Releases & Classic Hits</p>
-            <a href="movie.html"><button class="btn3">View Movies</button></a>
+            <a href="movie.php"><button class="btn3">View Movies</button></a>
             </div>
         </div>
 
@@ -100,7 +112,7 @@
             <div class="overlay">
             <h2>Books</h2>
             <p>Best Sellers & Popular Reads</p>
-            <a href="book.html"><button class="btn3">View Books</button></a>
+            <a href="book.php"><button class="btn3">View Books</button></a>
             </div>
         </div>
 
@@ -155,18 +167,17 @@
 <div class="login-section">
     <div class="wrapper">
         <span class="icon-close"><i class="fa-solid fa-xmark"></i></span>
+        
         <div class="form-box login">
             <h2>Login</h2>
-            <form action="#">
-                <div class="input-box">
-                    <span class="icon"><i class="fa-solid fa-envelope "></i></span>
-                    <input type="email" required>
-                    <label>Email</label>
+            <form action="actions.php" method="POST">
+                <input type="hidden" name="form_type" value="login"> <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+                    <input type="email" name="email" required> <label>Email</label>
                 </div>
                 <div class="input-box">
                     <span class="icon"><i class="fa-solid fa-lock"></i></span>
-                    <input type="password" required>
-                    <label>Password</label>
+                    <input type="password" name="password" required> <label>Password</label>
                 </div>
                 <div class="remember-forgot">
                     <label><input type="checkbox">Remember me</label>
@@ -183,29 +194,36 @@
 
         <div class="form-box register">
             <h2>Register</h2>
-            <form action="#">
-                <div class="input-box">
+            <form action="actions.php" method="POST">
+                <input type="hidden" name="form_type" value="register"> <div class="input-box">
                     <span class="icon"><i class="fa-solid fa-user"></i></span>
-                    <input type="text" required>
-                    <label>Username</label>
+                    <input type="text" name="username" required> <label>Username</label>
                 </div>
+                
                 <div class="input-box">
-                    <span class="icon"><i class="fa-solid fa-envelope "></i></span>
-                    <input type="email" required>
-                    <label>Email</label>
+                    <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+                    <input type="email" name="email" required> <label>Email</label>
                 </div>
+
+                <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-phone"></i></span>
+                    <input type="text" id="phoneInput" name="phone" required maxlength="10" pattern="[0-9]{10}"> <label>Phone Number</label>
+                </div>
+
                 <div class="input-box">
                     <span class="icon"><i class="fa-solid fa-lock"></i></span>
-                    <input type="password" required>
-                    <label>Password</label>
+                    <input type="password" name="password" required> <label>Password</label>
                 </div>
+
                 <div class="remember-forgot">
-                    <label><input type="checkbox">agree to the terms & conditions</label>
+                    <label><input type="checkbox" required>agree to the terms & conditions</label>
                 </div>
+
                 <button type="submit" class="btnlgn">Register</button>
+
                 <div class="login-register">
                     <p>Already have an account?
-                    <a href="#" class="login-link">Login</a>
+                        <a href="#" class="login-link">Login</a>
                     </p>
                 </div>
             </form>
