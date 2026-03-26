@@ -128,7 +128,6 @@ nav ul li a.active {
 
 .dropdown:hover .arrow {
     transform: rotate(90deg);
-    color: #e67e22;
 }
 
 /* --- 6. BUTTON EXCEPTIONS --- */
@@ -225,6 +224,10 @@ p {
   padding: 5px 15px;
   border-radius: 5px;
   border-color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none; /* Crucial for the Logout link! */
 }
 
 .btn2 {
