@@ -78,84 +78,84 @@ const booksList = [
 ];
 
 const moviesList = [
-    { id: 1001, title: "Fight Club", price: "₹59", img: "images/movieimg/m1.jpeg", videoFile: "trailers/fc.mp4",
+    { id: 1001, title: "Fight Club", price: "₹59", img: "images/movieimg/m1.jpeg", videoFile: "https://www.youtube.com/embed/O1nDozs-LxI?si=ojWB1rHSbPJnADMc",
         description: `Unhappy with his capitalistic lifestyle, a white-collared insomniac forms an underground fight club with Tyler, a careless soap salesman. Soon, their venture spirals down into something sinister.<br>
         <b>Cast:</b> Brad Pitt, Edward Norton, Helena Bonham Carter, Meat Loaf, Jared Leto.<br>
         <b>Director:</b> David Fincher.<br>
         <b>Genre:</b> Drama, Thriller.<br>
         <b>Release Year:</b> 1999.`, category: "Drama" }, 
 
-    { id: 1002, title: "Interstellar", price: "₹59", img: "images/movieimg/m2.jpeg", videoFile: "trailers/interstellar.mp4", 
+    { id: 1002, title: "Interstellar", price: "₹59", img: "images/movieimg/m2.jpeg", videoFile: "https://www.youtube.com/embed/zSWdZVtXT7E?si=BCo_A12lhh0Y42Gc", 
         description: `When Earth becomes uninhabitable in the future, a farmer and ex-NASA pilot, Joseph Cooper, is tasked to pilot a spacecraft, along with a team of researchers, to find a new planet for humans.<br>
         <b>Cast:</b> Matthew McConaughey, Anne Hathaway, Jessica Chastain, Bill Irwin, Ellen Burstyn.<br>
         <b>Director:</b> Christopher Nolan.<br>
         <b>Genre:</b> Adventure, Drama, Sci-Fi.<br>
         <b>Release Year:</b> 2014.`, category: "Sci-Fi" },
 
-    { id: 1003, title: "Jumanji Next Level", price: "₹59", img: "images/movieimg/m3.jpeg", videoFile: "trailers/jumanji.mp4",
+    { id: 1003, title: "Jumanji Next Level", price: "₹59", img: "images/movieimg/m3.jpeg", videoFile: "https://www.youtube.com/embed/rBxcF-r9Ibs?si=17pA_7CKk8YAXusa",
         description: `When Spencer goes missing, his group of friends return to Jumanji to travel unexplored territories and help him escape the world's most dangerous game.
         <b>Cast:</b> Dwayne Johnson, Jack Black, Kevin Hart, Karen Gillan, Awkwafina.<br>
         <b>Director:</b> Jake Kasdan.<br>
         <b>Genre:</b> Action, Adventure, Comedy.<br>
         <b>Release Year:</b> 2019.`, category: "Drama" },
 
-    { id: 1004, title: "Spiderman", price: "₹59", img: "images/movieimg/m4.jpeg", videoFile: "trailers/spider.mp4",
+    { id: 1004, title: "Spiderman", price: "₹59", img: "images/movieimg/m4.jpeg", videoFile: "https://www.youtube.com/embed/DiTECkLZ8HM?si=2n3nvHppGBq3WMd5",
         description: `Spider-Man seeks the help of Doctor Strange to forget his exposed secret identity as Peter Parker. However, Strange's spell goes horribly wrong, leading to unwanted guests entering their universe.<br>
         <b>Cast:</b> Tom Holland, Zendaya, Mahershala Ali, Jon Favreau.<br>
         <b>Director:</b> Jon Watts.<br>
         <b>Genre:</b> Action, Adventure, Comedy.<br>
         <b>Release Year:</b> 2021.`, category: "Sci-Fi" },
 
-    { id: 1005, title: "IT", price: "₹59", img: "images/movieimg/m5.jpeg", videoFile: "trailers/it.mp4",
+    { id: 1005, title: "IT", price: "₹59", img: "images/movieimg/m5.jpeg", videoFile: "https://www.youtube.com/embed/FnCdOQsX5kc?si=KldZGKn_phYhPxs1",
         description: `Seven helpless and bullied children are forced to face their worst nightmares when Pennywise, a shape-shifting clown, reappears. The clown, an ancient evil torments children before feeding on them.<br>
         <b>Cast:</b> Bill Skarsgård, Jaeden Martell, Finn Wolfhard, Jeremy Ray Taylor.<br>
         <b>Director:</b> Andy Muschietti.<br>
         <b>Genre:</b> Horror, Thriller.<br>
         <b>Release Year:</b> 2017.`, category: "Horror" },
 
-    { id: 1006, title: "The Batman", price: "₹59", img: "images/movieimg/m6.jpeg", videoFile: "trailers/batman.mp4",
+    { id: 1006, title: "The Batman", price: "₹59", img: "images/movieimg/m6.jpeg", videoFile: "https://www.youtube.com/embed/mqqft2x_Aa4?si=DEArUp5j7L2c_Rz3",
         description: `Batman is called to intervene when the mayor of Gotham City is murdered. Soon, his investigation leads him to uncover a web of corruption, linked to his own dark past.<br>
         <b>Cast:</b> Christian Bale, Heath Ledger, Aaron Eckhart, Michael Caine.<br>
         <b>Director:</b> Matt Reeves.<br>
         <b>Genre:</b> Action, Crime, Drama.<br>
         <b>Release Year:</b> 2022.`, category: "Sci-Fi" },
 
-    { id: 1007, title: "Pirates of the Caribbean", price: "₹59", img: "images/movieimg/m7.jpeg", videoFile: "trailers/pocs.mp4",
+    { id: 1007, title: "Pirates of the Caribbean", price: "₹59", img: "images/movieimg/m7.jpeg", videoFile: "https://www.youtube.com/embed/KpFMVcZ4o7U?si=Rawe_h_GgV4BNYRP",
         description: `To break the curse of Flying Dutchman, Captain Jack Sparrow and Henry Turner embark on a mission to find the Trident of Poseidon. They also try to stop Captain Salazar who intends to rule the seas.<br>
         <b>Cast:</b> Johnny Depp, Geoffrey Rush, Orlando Bloom, Keira Knightley.<br>
         <b>Director:</b> Joachim Rønning, Espen Sandberg.<br>
         <b>Genre:</b> Action, Adventure, Comedy.<br>
         <b>Release Year:</b> 2017.`, category: "Drama" },
 
-    { id: 1008, title: "The Truman Show", price: "₹59", img: "images/movieimg/m8.jpeg", videoFile: "trailers/truman.mp4",
+    { id: 1008, title: "The Truman Show", price: "₹59", img: "images/movieimg/m8.jpeg", videoFile: "https://www.youtube.com/embed/dlnmQbPGuls?si=C31bM-96i5su1T9S",
         description: `Executive producer Christof organises a reality show based on the life of an ordinary man, Truman Burbank. But Truman is unaware of the fact that every move of his life is being captured by cameras.<br>
         <b>Cast:</b> Jim Carrey, Laura Linney, Noah Emmerich, Natascha McElhone.<br>
         <b>Director:</b> Peter Weir.<br>
         <b>Genre:</b> Drama.<br>
         <b>Release Year:</b> 1998.`, category: "Drama" },
 
-    { id: 1009, title: "Midsommar", price: "₹59", img: "images/movieimg/m9.jpeg", videoFile: "trailers/midsommar.mp4",
+    { id: 1009, title: "Midsommar", price: "₹59", img: "images/movieimg/m9.jpeg", videoFile: "https://www.youtube.com/embed/1Vnghdsjmd0?si=V5nxGnX4wXVguEuK",
         description: `Dani's psychological trauma affects her relationship with Christian, her lover. However, when they visit their friend's ancestral commune in an effort to mend things, it changes their lives forever.<br>
         <b>Cast:</b> Anya Taylor-Joy, Florence Pugh, David Jonsson, Vivi-Anne Hultén.<br>
         <b>Director:</b> Ari Aster.<br>
         <b>Genre:</b> Horror, Thriller.<br>
         <b>Release Year:</b> 2019.`, category: "Horror" },
 
-    { id: 1010, title: "Dune", price: "₹59", img: "images/movieimg/m10.jpeg", videoFile: "trailers/dune.mp4",
+    { id: 1010, title: "Dune", price: "₹59", img: "images/movieimg/m10.jpeg", videoFile: "https://www.youtube.com/embed/n9xhJrPXop4?si=OHWGAaDyBBlMoa4v",
         description: `Paul Atreides arrives on Arrakis after his father accepts the stewardship of the dangerous planet. However, chaos ensues after a betrayal as forces clash to control melange, a precious resource.<br>
         <b>Cast:</b> Timothée Chalamet, Zendaya, Rebecca Ferguson, Oscar Isaac.<br>
         <b>Director:</b> Denis Villeneuve.<br>
         <b>Genre:</b> Action, Adventure, Drama.<br>
         <b>Release Year:</b> 2021.`, category: "Sci-Fi" },
 
-    { id: 1011, title: "Black Phone 2", price: "₹59", img: "images/movieimg/m11.jpeg", videoFile: "trailers/bp2.mp4",
+    { id: 1011, title: "Black Phone 2", price: "₹59", img: "images/movieimg/m11.jpeg", videoFile: "https://www.youtube.com/embed/v0kqkRZHqk4?si=awwxN0mWUf9Qf9uO",
         description: `As Finn, now 17, struggles with life after his captivity, his sister begins receiving calls in her dreams from the black phone and seeing disturbing visions<br>
         <b>Cast:</b> Mason Thames, Madeleine Yuna Voyles, Evan Jonigkeit.<br>
         <b>Director:</b> Scott Derrickson.<br>
         <b>Genre:</b> Horror, Thriller.<br>
         <b>Release Year:</b> 2025.`, category: "Horror" },
 
-    { id: 1012, title: "The Conjuring", price: "₹59", img: "images/movieimg/m12.jpeg", videoFile: "trailers/conjuring.mp4",
+    { id: 1012, title: "The Conjuring", price: "₹59", img: "images/movieimg/m12.jpeg", videoFile: "https://www.youtube.com/embed/ejMMn0t58Lc?si=G5qFcJ0k_Ly93ubP",
         description: `Rod and Carolyn find their pet dog dead under mysterious circumstances and experience a spirit that harms their daughter Andrea. They finally call investigators who can help them get out of the mess.<br>
         <b>Cast:</b> Vera Farmiga, Patrick Wilson, Ron Livingston.<br>
         <b>Director:</b> James Wan.<br>
@@ -213,44 +213,33 @@ function renderGrid(data) {
 window.addEventListener('hashchange', () => renderGrid());
 
 function openPreview(itemId) {
-    // 1. Find the item in any of the three lists
     const item = [...moviesList, ...booksList, ...gamesList].find(i => i.id === itemId);
     if (!item) return;
 
     const modal = document.getElementById('movie-preview-modal');
     const titleEl = document.getElementById('preview-title');
     const descEl = document.getElementById('preview-desc');
-    const videoPlayer = document.getElementById('preview-video');
-    const videoSource = document.getElementById('video-source');
+    const ytFrame = document.getElementById('youtube-trailer'); // New Iframe
     const imageEl = document.getElementById('preview-image');
 
-    // 2. Set the Text and Reset Animations
     titleEl.innerHTML = item.title;
     descEl.innerHTML = item.description || "Explore this title in MediaVault.";
-    imageEl.classList.remove('game-twirl'); // Remove animation class so it can play again
+    
+    // Reset displays
+    ytFrame.style.display = "none";
+    imageEl.style.display = "none";
+    ytFrame.src = ""; // Clear old video
 
-    // 3. Media Logic
     if (item.videoFile) {
-        // MOVIES: Show Video
-        imageEl.style.display = "none";
-        videoPlayer.style.display = "block";
-        videoSource.src = item.videoFile;
-        videoPlayer.load();
+        // MOVIES: Show YouTube Trailer
+        ytFrame.style.display = "block";
+        // Convert a regular YT link to an EMBED link if necessary
+        let embedUrl = item.videoFile.replace("watch?v=", "embed/");
+        ytFrame.src = embedUrl + "?autoplay=1"; // Add autoplay for better UX
     } else {
         // BOOKS & GAMES: Show Image
-        videoPlayer.style.display = "none";
-        videoPlayer.pause();
         imageEl.style.display = "block";
         imageEl.src = item.img;
-
-        // Check if the item is from the gamesList
-        const isGame = gamesList.some(g => g.id === itemId);
-        if (isGame) {
-            // Trigger the twirl inside the modal
-            setTimeout(() => {
-                imageEl.classList.add('game-twirl');
-            }, 50);
-        }
     }
 
     modal.style.display = "block";
@@ -258,14 +247,12 @@ function openPreview(itemId) {
 
 function closePreview() {
     const modal = document.getElementById('movie-preview-modal');
-    const videoPlayer = document.getElementById('preview-video');
+    const ytFrame = document.getElementById('youtube-trailer');
 
     if (modal) modal.style.display = "none";
     
-    if (videoPlayer) {
-        videoPlayer.pause();
-        videoPlayer.currentTime = 0;
-    }
+    // IMPORTANT: Clear the src so the video stops playing in the background!
+    if (ytFrame) ytFrame.src = ""; 
 }
 
 // Global click listener for closing modals
@@ -277,32 +264,38 @@ document.addEventListener('click', function(event) {
 
 
 function addToCart(id) {
-    // Search ALL lists for the item
-    const item = [...gamesList, ...booksList, ...moviesList].find(i => i.id === id);
-    
-    if (item) {
-        // Strip non-numeric characters (₹ or $) for math
-        const originalPrice = parseFloat(item.price.replace(/[^\d.]/g, '')) || 0;
-        const discount = originalPrice * 0.10;
-        const finalPrice = originalPrice - discount;
+    // Check the bridge variable we passed from PHP
+    if (window.userLoggedIn === true) {
+        
+        // Find the item in your lists
+        const item = [...gamesList, ...booksList, ...moviesList].find(i => i.id === id);
+        
+        if (item) {
+            const originalPrice = parseFloat(item.price.replace(/[^\d.]/g, '')) || 0;
+            const discount = originalPrice * 0.10;
+            const finalPrice = originalPrice - discount;
 
-        myLibrary.push({
-            uniqueId: Date.now() + Math.random(),
-            title: item.title,
-            price: originalPrice,
-            discount: discount,
-            total: finalPrice
-        });
+            myLibrary.push({
+                uniqueId: Date.now() + Math.random(),
+                title: item.title,
+                price: originalPrice,
+                discount: discount,
+                total: finalPrice
+            });
 
-        saveAndRefresh();
-        alert(`${item.title} added to your library!`);
+            saveAndRefresh();
+            alert(`${item.title} added to your library!`);
+        }
+    } else {
+        // Simple and clean: Alert then redirect
+        alert("Please login first to add items to your MediaVault!");
+        window.location.href = "index.php"; 
     }
 }
-
 // ... (Rest of your library functions: removeFromLibrary, saveAndRefresh, renderLibraryTable, updateCartBadge)
 
 function removeFromLibrary(uniqueId) {
-    myLibrary = myLibrary.filter(item => item.uniqueId !== uniqueId);
+    myLibrary = myLibrary.filter(item => item.uniqueId != uniqueId);
     saveAndRefresh();
 }
 
@@ -324,7 +317,7 @@ function renderLibraryTable() {
             <td style="color: #ff4757;">-₹${item.discount.toFixed(2)}</td>
             <td>₹${item.total.toFixed(2)}</td>
             <td>
-                <button class="remove-btn" onclick="removeFromLibrary(${item.uniqueId})">
+                <button class="remove-btn" onclick="removeFromLibrary('${item.uniqueId}')">
                     <i class="fa-solid fa-trash"></i>
                 </button>
             </td>
@@ -385,3 +378,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// Function to wipe the whole library
+function clearEntireLibrary() {
+    if (confirm("Are you sure you want to remove everything from your library?")) {
+        myLibrary = []; // Empty the array
+        saveAndRefresh(); // This will update localStorage and the UI
+    }
+}
+
+// Function to "Place Order"
+function processOrder() {
+    if (myLibrary.length === 0) {
+        alert("Your library is empty! Add some games first.");
+        return;
+    }
+
+    alert("Thank you for your order! Your items are now being processed.");
+    
+    myLibrary = [];
+    saveAndRefresh();
+    
+    // CHANGE THIS LINE: Use display none instead of removing a class
+    document.getElementById('libraryOverlay').style.display = 'none';
+}
