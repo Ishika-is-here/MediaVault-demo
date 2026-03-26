@@ -178,6 +178,10 @@ body.book-page{
     transform: scale(1.4);
 }
 
+.library-header h1 {
+    color: #ff4757;
+}
+
 /* Ensure the overlay is actually on top of everything */
 .library-overlay {
     display: none; /* JS will change this to flex */
@@ -193,11 +197,20 @@ body.book-page{
 .library-content {
     width: 80%;
     max-width: 1000px;
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
     background: #1a1a1a;
     padding: 40px;
     border-radius: 20px;
     border: 1px solid #333;
     box-shadow: 0 0 50px rgba(0,0,0,0.5);
+}
+
+.table-wrapper {
+    /* THE FIX: If the table is long, it scrolls INSIDE the box */
+    overflow-y: auto; 
+    flex: 1;
 }
 
 .library-header {
@@ -242,6 +255,44 @@ body.book-page{
     text-align: right;
     font-size: 1.5rem;
     color: #ff4757;
+}
+
+
+.cart-actions {
+    display: flex;
+    gap: 15px; /* Space between the two buttons */
+}
+
+.btn-clear {
+    background: transparent;
+    color: #ff4757;
+    border: 1px solid #ff4757;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-clear:hover {
+    background: #ff4757;
+    color: white;
+}
+
+.btn-order {
+    background: #2ed573;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(46, 213, 115, 0.3);
+    transition: 0.3s;
+}
+
+.btn-order:hover {
+    background: #26af5f;
+    transform: translateY(-2px);
 }
 
 .remove-btn {
