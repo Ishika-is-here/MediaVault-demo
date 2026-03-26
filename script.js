@@ -28,3 +28,27 @@ iconClose.addEventListener('click', () => {
     forms.forEach(form => form.reset());
 });
 
+// Select the phone input
+const phoneInput = document.getElementById('phoneInput');
+
+// 4. Phone Input "Cleaner" (No letters allowed)
+if (phoneInput) {
+    phoneInput.addEventListener('input', (e) => {
+        // Replace anything that is NOT a number with an empty string
+        e.target.value = e.target.value.replace(/[^0-9]/g, '');
+    });
+}
+
+function confirmLogout(event) {
+    // Show the browser's built-in confirmation box
+    const choice = confirm("Are you sure you want to log out of MediaVault?");
+    
+    if (choice) {
+        // If they click 'Yes/OK', let the link go to logout.php
+        return true; 
+    } else {
+        // If they click 'Cancel', stop the link from working
+        event.preventDefault();
+        return false;
+    }
+}
