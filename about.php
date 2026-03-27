@@ -117,10 +117,10 @@
 
         <div class="contact-right">
             <h3 class="form-title">Feedback</h3>
-            <form action="send_feedback.php" method="POST" class="feedback-form">
+            <form action="actions.php" method="POST" class="feedback-form">
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" id="name" name="user_name" placeholder="Your Name" required>
+                    <input type="text" id="name" name="user_name" placeholder="Your Name" maxlength="50" required>
                 </div>
 
                 <div class="form-group">
@@ -130,7 +130,7 @@
 
                 <div class="form-group">
                     <label for="category">Subject</label>
-                    <select id="category" name="feedback_type">
+                    <select id="category" name="feedback_subject">
                         <option value="general">General Feedback</option>
                         <option value="suggestion">New Feature Suggestion</option>
                         <option value="bug">Report a Bug</option>
