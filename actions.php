@@ -54,5 +54,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 }
+
+// --- HANDLE FEEDBACK ---
+if (isset($_POST['submit_feedback'])) {
+    
+    // 1. Get user_id if logged in, otherwise set to NULL
+    $u_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : "NULL";
+
+    // 2. Clean data using your existing $conn
+    $name    = mysqli_real_escape_string($conn, $_POST['user_name']);
+    $email   = mysqli_real_escape_string($conn, $_POST['user_email']);
+    
+    $subject = mysqli_real_escape_string($conn, $_POST['feedback_subject']);
+    if (empty($subject)) {
+        $subject = "general";
+    }
+    
+    $msg     = mysqli_real_escape_string($conn, $_POST['user_message']);
+
+    // 4. The Clean SQL
+    $sql = "INSERT INTO feedback (user_id, name, email, subject, message) 
+            VALUES ($u_id, '$name', '$email', '$subject', '$msg')";
+
+    if (mysqli_query($conn, $sql)) {
+        echo "<script>alert('Message Sent!'); window.location.href='about.php';</script>";
+    } else {
+        echo "Error: " . mysqli_error($conn);
+    }
+}
 $conn->close();
 ?>
