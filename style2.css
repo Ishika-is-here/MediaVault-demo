@@ -381,13 +381,3 @@ body.book-page{
     max-height: 300px;
     object-fit: contain;
 }
-
-/* The Twirl Animation */
-@keyframes modalTwirl {
-    0% { transform: rotateY(0deg); }
-    100% { transform: rotateY(360deg); }
-}
-
-.game-twirl {
-    animation: modalTwirl 0.8s ease-in-out;
-}
