@@ -19,54 +19,49 @@ $isLoggedIn = isset($_SESSION['user_id']) ? 'true' : 'false';
 <div class="header">
   <div class="container">
     <div class="navbar">
-      <a href="#">
+      <a href="index.php">
       <img src="images/logo.png" width="150">
       </a>
-      <nav>
-        <ul>
-            <a href="index.php">
-        <img src="images/logo.png" width="150">
-      </a>
-      <nav>
-        <ul>
-            <li><a href="index.php">Home</a></li>   
-            <li class="dropdown">
-                        <a href="javascript:void(0)">Games<span class="arrow">&#9656;</span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="games.php#action">Action</a></li>
-                            <li><a href="games.php#simulation">Simulation</a></li>
-                            <li><a href="games.php#adventure">Adventure</a></li>
-                        </ul>
-                    </li>
+        <nav>
+            <ul>
+                <li><a href="index.php">Home</a></li>   
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="active">Games<span class="arrow">&#9656;</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="games.php#action">Action</a></li>
+                        <li><a href="games.php#simulation">Simulation</a></li>
+                        <li><a href="games.php#adventure">Adventure</a></li>
+                    </ul>
+                </li>
 
-                    <li class="dropdown">
-                        <a href="javascript:void(0)">Movies<span class="arrow">&#9656;</span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="movie.php#horror">Horror</a></li>
-                            <li><a href="movie.php#sci-fi">Sci-Fi</a></li>
-                            <li><a href="movie.php#drama">Drama</a></li>
-                        </ul>
-                    </li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)">Movies<span class="arrow">&#9656;</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="movie.php#horror">Horror</a></li>
+                        <li><a href="movie.php#sci-fi">Sci-Fi</a></li>
+                        <li><a href="movie.php#drama">Drama</a></li>
+                    </ul>
+                </li>
 
-                    <li class="dropdown">
-                        <a href="javascript:void(0)" class="active">Books<span class="arrow">&#9656;</span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="book.php#fiction">Fiction</a></li>
-                            <li><a href="book.php#classics">Classics</a></li>
-                            <li><a href="book.php#mystery">Mystery</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="about.php">About & Contact</a></li>
-                    <li><div class="search-box">
-                        <input type="search" class="search" placeholder="Search games...">
-                        <i class="fa-solid fa-magnifying-glass"></i></div>
-                    </li>
-                    <li><a href="#" class="icon-cart">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                        <span id="cart-count">0</span></a>
-                    </li>
-                </ul>
-            </nav>
+                <li class="dropdown">
+                    <a href="javascript:void(0)">Books<span class="arrow">&#9656;</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="book.php#fiction">Fiction</a></li>
+                        <li><a href="book.php#classics">Classics</a></li>
+                        <li><a href="book.php#mystery">Mystery</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.php">About & Contact</a></li>
+                <li><div class="search-box">
+                    <input type="search" class="search" placeholder="Search games...">
+                    <i class="fa-solid fa-magnifying-glass"></i></div>
+                </li>
+                <li><a href="#" class="icon-cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span id="cart-count">0</span></a>
+                </li>
+            </ul>
+        </nav>
     </div>
   </div>
 </div>
@@ -98,7 +93,7 @@ $isLoggedIn = isset($_SESSION['user_id']) ? 'true' : 'false';
                         <th>Original Price</th>
                         <th>Discount (10%)</th>
                         <th>Total Paid</th>
-                        <th>Action</th> </tr>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody id="libraryTableBody">
@@ -126,16 +121,16 @@ $isLoggedIn = isset($_SESSION['user_id']) ? 'true' : 'false';
 <footer>
     <div class="footer-container">
         <div class="footer-left">
-        <a href="about.html#feedback-section">Contact Us</a>
-        <a href="about.html#feedback-section">Feedback</a>
+        <a href="about.php#feedback-section">Contact Us</a>
+        <a href="about.php#feedback-section">Feedback</a>
         <a href="/terms">Terms & Policy</a>
         </div>
 
         <div class="footer-right">
-        <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#" class="social-icon"><i class="fa-brands fa-x-twitter"></i></a>
-        <a href="#" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
-        <a href="#" class="social-icon"><i class="fa-brands fa-square-facebook"></i></a>
+        <a href="https://www.instagram.com/?hl=en" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://x.com" class="social-icon"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="https://www.youtube.com" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://www.facebook.com" class="social-icon"><i class="fa-brands fa-square-facebook"></i></a>
         </div>
   </div>
 </footer>
