@@ -47,7 +47,7 @@
                     </li>
 
                     <li><a href="about.php" class="active">About & Contact</a></li>
-                    <li><a href="#" class="btn">Login</a></li>
+                    
                 </ul>
             </nav>
     </div>
@@ -108,9 +108,9 @@
             <div class="social-handles">
                 <h4>Follow Us</h4>
                 <div class="social-icons">
-                    <a href="#" class="social-link">GitHub</a>
-                    <a href="#" class="social-link">Instagram</a>
-                    <a href="#" class="social-link">Twitter</a>
+                    <a href="https://github.com" class="social-link">GitHub</a>
+                    <a href="https://www.instagram.com/?hl=en" class="social-link">Instagram</a>
+                    <a href="https://x.com" class="social-link">Twitter</a>
                 </div>
             </div>
         </div>
@@ -118,6 +118,7 @@
         <div class="contact-right">
             <h3 class="form-title">Feedback</h3>
             <form action="actions.php" method="POST" class="feedback-form">
+                <input type="hidden" name="form_type" value="feedback">
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" id="name" name="user_name" placeholder="Your Name" maxlength="50" required>
@@ -153,16 +154,16 @@
 <footer>
     <div class="footer-container">
         <div class="footer-left">
-        <a href="about.html#feedback-section">Contact Us</a>
-        <a href="about.html#feedback-section">Feedback</a>
+        <a href="about.php#feedback-section">Contact Us</a>
+        <a href="about.php#feedback-section">Feedback</a>
         <a href="/terms">Terms & Policy</a>
         </div>
 
         <div class="footer-right">
-        <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#" class="social-icon"><i class="fa-brands fa-x-twitter"></i></a>
-        <a href="#" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
-        <a href="#" class="social-icon"><i class="fa-brands fa-square-facebook"></i></a>
+        <a href="https://www.instagram.com/?hl=en" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://x.com" class="social-icon"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="https://www.youtube.com" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://www.facebook.com" class="social-icon"><i class="fa-brands fa-square-facebook"></i></a>
         </div>
   </div>
 </footer>
