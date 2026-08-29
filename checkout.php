@@ -78,37 +78,7 @@ if (!empty($userName)) {
     </div>
 </div>
 
-<script>
-    function formatRupee(amount) {
-        return '₹' + amount.toFixed(2);
-    }
+<script src="script2.js"></script>
 
-    const pending = localStorage.getItem('pendingOrder');
-    if (!pending) {
-        document.getElementById('cartStatus').innerText = 'Your cart is empty. Add items before placing an order.';
-        document.getElementById('orderForm').style.display = 'none';
-    } else {
-        const data = JSON.parse(pending);
-        if (!data.items || data.items.length === 0) {
-            document.getElementById('cartStatus').innerText = 'Your cart is empty. Add items before placing an order.';
-            document.getElementById('orderForm').style.display = 'none';
-        } else {
-            const orderSummary = document.getElementById('orderSummary');
-            const totalAmount = Number(data.total || data.items.reduce((sum, i) => sum + (i.total || 0), 0));
-
-            orderSummary.innerHTML = data.items.map(item => {
-                const itemPrice = Number(item.total || 0).toFixed(2);
-                return `<div>${item.title} - ₹${itemPrice}</div>`;
-            }).join('');
-
-            document.getElementById('orderTotal').innerText = formatRupee(totalAmount);
-            document.getElementById('total_amount').value = totalAmount.toFixed(2);
-            document.getElementById('items').value = JSON.stringify(data.items);
-
-            // Keep cart in storage until order is complete
-            localStorage.setItem('userLibrary', JSON.stringify(data.items));
-        }
-    }
-</script>
 </body>
 </html>
